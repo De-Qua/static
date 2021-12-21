@@ -23,7 +23,7 @@ def update_actv_data(logger, file_name="actv_nav.zip"):
         variables = yaml.load(f, Loader=yaml.FullLoader)
     last_file_downloaded = variables['gtfs_last_number']
     if num > last_file_downloaded:
-        full_file_name = os.path.join(os.getcwd(), file_name)
+        full_file_name = os.path.join(os.getcwd(), "files", "gtfs", file_name)
         wget.download(f"{url}{last_file_name}", full_file_name)
         logger.info(f"updated actv, last number {num}")
         return num

@@ -33,8 +33,11 @@ if last_num > 0:
 
     ## UPDATE GRAPHS
     logger.info("Loading the graphs...")
-    graph_street, graph_water = load_graphs(yaml_dict_old['graph_street_file'], yaml_dict_old['graph_water_file'])
-    path_zip_gtfs_actv = os.path.join(os.getcwd(), zip_name)
+    graph_folder = os.path.join(os.getcwd(), "files", yaml_dict_old["graph_folder"])
+    graph_street_path = os.path.join(graph_folder, yaml_dict_old['graph_street_file'])
+    graph_water_path = os.path.join(graph_folder, yaml_dict_old['graph_water_file'])
+    graph_street, graph_water = load_graphs(graph_street_path, graph_water_path)
+    path_zip_gtfs_actv = os.path.join(os.getcwd(), "files", "gtfs", zip_name)
     logger.info("Adding waterbus to the graph...")
     graph_street_only, graph_street_street_plus_waterbus = add_waterbus_to_street(graph_street, path_zip_gtfs_actv)
     yaml_dict_to_update['graph_street_plus_waterbus_file'] = graph_street_street_plus_waterbus
