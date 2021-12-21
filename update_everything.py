@@ -6,6 +6,7 @@ from logging.handlers import RotatingFileHandler
 from update_actv_data import update_actv_data
 from update_yaml import update_yaml
 import yaml
+import datetime
 
 yaml_file_name="files_names.yaml"
 with open(os.path.join(os.getcwd(), yaml_file_name), 'r') as f:
@@ -40,8 +41,17 @@ if last_num > 0:
     path_zip_gtfs_actv = os.path.join(os.getcwd(), "files", "gtfs", zip_name)
     logger.info("Adding waterbus to the graph...")
     graph_street_only, graph_street_street_plus_waterbus = add_waterbus_to_street(graph_street, path_zip_gtfs_actv)
-    yaml_dict_to_update['graph_street_plus_waterbus_file'] = graph_street_street_plus_waterbus
-    yaml_dict_to_update['graph_street_only_file'] = graph_street_only
+    today_time = datetime.datetime.today().strftime("%Y-%m-%d")
+
+    new_graph_street_plus_waterbus_name = f"graph_street_plus_waterbus_file_{today_time}.gt"
+    new_graph_street_plus_waterbus_path = os.path.join(graph_folder,new_graph_street_plus_waterbus_name)
+    graph_street_only.save(new_graph_street_plus_waterbus_path)
+    yaml_dict_to_update['graph_street_plus_waterbus_file'] = new_graph_street_plus_waterbus_name
+
+    new_graph_street_only_name = f"graph_street_only_file_{today_time}.gt"
+    new_graph_street_only_path = os.path.join(graph_folder,new_graph_street_only_name)
+    graph_street_only.save(new_graph_street_only_path)
+    yaml_dict_to_update['graph_street_only_file'] = new_graph_street_only_name
 
 if yaml_dict_to_update:
     update_yaml(logger, **yaml_dict_to_update)
