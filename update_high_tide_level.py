@@ -9,6 +9,7 @@ logging.basicConfig(
     filename="/home/rafiki/task.log",
     level=logging.DEBUG
 )
+
 now = datetime.now()
 cur_time = now.strftime("%b %d %Y %H:%M:%S")
 logging.info(f"\nUpdate the high tide at: {cur_time}\n")
