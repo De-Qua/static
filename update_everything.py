@@ -58,3 +58,6 @@ if last_num > 0:
 
 if yaml_dict_to_update:
     update_yaml(logger, **yaml_dict_to_update)
+    logger.info("YAML updated")
+else:
+    logger.info("nothing to be updated")
