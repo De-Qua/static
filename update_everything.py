@@ -8,6 +8,7 @@ from update_yaml import update_yaml
 import yaml
 import datetime
 
+
 yaml_file_name="files_names.yaml"
 with open(os.path.join(os.getcwd(), yaml_file_name), 'r') as f:
     yaml_dict_old = yaml.load(f, Loader=yaml.FullLoader)
@@ -23,6 +24,8 @@ formatter = logging.Formatter('[%(asctime)s] [%(name)s:%(filename)s:%(lineno)d] 
 file_handler.setFormatter(formatter)
 file_handler.setLevel(logging.INFO)
 logger.addHandler(file_handler)
+logger.info("#" * 50)
+logger.info("running the script")
 yaml_dict_to_update = {}
 # UPDATE ACTV
 zip_name = "actv_nav.zip"

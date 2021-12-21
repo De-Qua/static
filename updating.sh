@@ -1,8 +1,10 @@
 #!/bin/bash
 cd /home/dequa/static
 
-git pull
+conda activate dequa
+
+sudo git pull
 
 python3 update_everything.py
 
-git push
+# git push
