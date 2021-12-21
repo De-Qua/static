@@ -19,7 +19,7 @@ def update_actv_data(logger, file_name="actv_nav.zip"):
     num_string = last_file_name.split('_')[-1][:-4]
     num = int(num_string)
     # read last one from yaml file
-    with open('files/files_names.yaml') as f:
+    with open('files_names.yaml') as f:
         variables = yaml.load(f, Loader=yaml.FullLoader)
     last_file_downloaded = variables['gtfs_last_number']
     if num > last_file_downloaded:
