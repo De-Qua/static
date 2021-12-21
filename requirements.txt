@@ -1,0 +1,4 @@
+pyyaml
+bs4
+wget
+dequa_graph
