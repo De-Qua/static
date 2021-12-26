@@ -1,18 +1,20 @@
-# graph files
+file_folder: files
 
+# graph files
 graph_folder: graphs
-graph_street_file: "dequa_ve_terra_v14_1110.gt"
-graph_water_file: "dequa_ve_acqua_v7_1609_directed.gt"
-graph_street_plus_waterbus_file: "dequa_ve_waterbus_1412.gt"
-graph_street_only_file: "dequa_ve_terra_v14_1412_wb.gt"
+graph_street_file: dequa_ve_terra_v14_1110.gt
+graph_water_file: dequa_ve_acqua_v7_1609_directed.gt
+graph_street_plus_waterbus_file: dequa_ve_waterbus_1412.gt
+graph_street_only_file: dequa_ve_terra_v14_1412_wb.gt
 
 # gtfs
-gtfs_folder: "gtfs"
+gtfs_folder: gtfs
 gtfs_last_number: 0
+gtfs_file: actv_nav.zip
 
 # tide
 tide_folder: tide
-tide_file: "high_tide_level.json"
+tide_file: high_tide_level.json
 
 # pois
 poi_folder: pois

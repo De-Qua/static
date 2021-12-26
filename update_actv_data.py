@@ -4,6 +4,7 @@ import wget
 from bs4 import BeautifulSoup
 import yaml
 
+
 def update_actv_data(logger, file_name="actv_nav.zip"):
     # get the page
     url = 'https://actv.avmspa.it/sites/default/files/attachments/opendata/navigazione/'

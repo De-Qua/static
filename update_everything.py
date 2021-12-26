@@ -9,7 +9,7 @@ import yaml
 import datetime
 
 
-yaml_file_name="files_names.yaml"
+yaml_file_name = "files_names.yaml"
 with open(os.path.join(os.getcwd(), yaml_file_name), 'r') as f:
     yaml_dict_old = yaml.load(f, Loader=yaml.FullLoader)
 
@@ -28,31 +28,33 @@ logger.info("#" * 50)
 logger.info("running the script")
 yaml_dict_to_update = {}
 # UPDATE ACTV
-zip_name = "actv_nav.zip"
+zip_name = yaml_dict_old["gtfs_file"]
 last_num = update_actv_data(logger, file_name=zip_name)
 # UPDATE POI
+
+file_folder = os.path.join(os.getcwd(), yaml_dict_old["file_folder"])
 
 if last_num > 0:
     yaml_dict_to_update['gtfs_last_number'] = last_num
 
     ## UPDATE GRAPHS
     logger.info("Loading the graphs...")
-    graph_folder = os.path.join(os.getcwd(), "files", yaml_dict_old["graph_folder"])
+    graph_folder = os.path.join(file_folder, yaml_dict_old["graph_folder"])
     graph_street_path = os.path.join(graph_folder, yaml_dict_old['graph_street_file'])
     graph_water_path = os.path.join(graph_folder, yaml_dict_old['graph_water_file'])
     graph_street, graph_water = load_graphs(graph_street_path, graph_water_path)
-    path_zip_gtfs_actv = os.path.join(os.getcwd(), "files", "gtfs", zip_name)
+    path_zip_gtfs_actv = os.path.join(file_folder, yaml_dict_old["gtfs_folder"], zip_name)
     logger.info("Adding waterbus to the graph...")
     graph_street_only, graph_street_street_plus_waterbus = add_waterbus_to_street(graph_street, path_zip_gtfs_actv)
     today_time = datetime.datetime.today().strftime("%Y-%m-%d")
 
     new_graph_street_plus_waterbus_name = f"graph_street_plus_waterbus_file_{today_time}.gt"
-    new_graph_street_plus_waterbus_path = os.path.join(graph_folder,new_graph_street_plus_waterbus_name)
+    new_graph_street_plus_waterbus_path = os.path.join(graph_folder, new_graph_street_plus_waterbus_name)
     graph_street_only.save(new_graph_street_plus_waterbus_path)
     yaml_dict_to_update['graph_street_plus_waterbus_file'] = new_graph_street_plus_waterbus_name
 
     new_graph_street_only_name = f"graph_street_only_file_{today_time}.gt"
-    new_graph_street_only_path = os.path.join(graph_folder,new_graph_street_only_name)
+    new_graph_street_only_path = os.path.join(graph_folder, new_graph_street_only_name)
     graph_street_only.save(new_graph_street_only_path)
     yaml_dict_to_update['graph_street_only_file'] = new_graph_street_only_name
 
