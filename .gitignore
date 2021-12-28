@@ -130,3 +130,6 @@ dmypy.json
 
 # Mac
 .DS_Store
+
+# our files
+files_names.yaml
