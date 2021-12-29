@@ -56,7 +56,7 @@ if last_num > 0:
 
     new_graph_street_plus_waterbus_name = f"graph_street_plus_waterbus_file_{today_time}.gt"
     new_graph_street_plus_waterbus_path = os.path.join(graph_folder, new_graph_street_plus_waterbus_name)
-    graph_street_only.save(new_graph_street_plus_waterbus_path)
+    graph_street_street_plus_waterbus.save(new_graph_street_plus_waterbus_path)
     yaml_dict_to_update['graph_street_plus_waterbus_file'] = new_graph_street_plus_waterbus_name
 
     new_graph_street_only_name = f"graph_street_only_file_{today_time}.gt"

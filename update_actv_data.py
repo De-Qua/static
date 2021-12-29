@@ -36,7 +36,7 @@ def update_actv_data(logger, file_folder=None):
         return num
     else:
         logger.info(f"NOT updated actv, old number {num}")
-        return -1,
+        return -1
 
 
 def get_updated_gtfs_files(logger, file_folder=None, file_format="*.zip", start_date=None):
