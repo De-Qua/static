@@ -7,10 +7,7 @@ def get_logger(name="dequa_update", file='logs/automatic_tasks.log', level=loggi
     logger = logging.getLogger(name)
     logger.setLevel(level)
     log_file = Path(file)
-    try:
-        log_file.mkdir(parents=True, exist_ok=True)
-    except FileExistsError:
-        pass
+    log_file.parent.mkdir(parents=True, exist_ok=True)
     file_handler = RotatingFileHandler(log_file, maxBytes=100000, backupCount=10)
     formatter = logging.Formatter('[%(asctime)s] [%(name)s:%(filename)s:%(lineno)d] [%(levelname)s] %(message)s')
     file_handler.setFormatter(formatter)
