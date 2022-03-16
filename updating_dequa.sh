@@ -4,10 +4,10 @@ source ./utils/logger.sh "logs/log.out" DEBUG
 source ~/miniconda3/etc/profile.d/conda.sh
 
 SCRIPTENTRY
-DEBUG "Activate environment"
+# DEBUG "Activate environment"
 # conda activate atom
 INFO "Starting the python update"
-/Users/ale/miniconda3/envs/atom/bin/python3 update_everything.py
+python3 update_everything.py
 SCRIPTEXIT
 # now=$(date + "%T")
 # cd /home/dequa/static
