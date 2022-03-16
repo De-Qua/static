@@ -1,0 +1,451 @@
+[Mar 15 Mar 2022 18:14:33 CET] [INFO]  > updating_dequa SCRIPTENTRY
+[Mar 15 Mar 2022 18:14:33 CET] [DEBUG]  Activate environment
+[Mar 15 Mar 2022 18:14:33 CET] [STDERR] 
+[Mar 15 Mar 2022 18:14:33 CET] [STDERR] CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+[Mar 15 Mar 2022 18:14:33 CET] [STDERR] To initialize your shell, run
+[Mar 15 Mar 2022 18:14:33 CET] [STDERR] 
+[Mar 15 Mar 2022 18:14:33 CET] [STDERR] $ conda init <SHELL_NAME>
+[Mar 15 Mar 2022 18:14:33 CET] [STDERR] 
+[Mar 15 Mar 2022 18:14:33 CET] [STDERR] Currently supported shells are:
+[Mar 15 Mar 2022 18:14:33 CET] [STDERR] - bash
+[Mar 15 Mar 2022 18:14:33 CET] [STDERR] - fish
+[Mar 15 Mar 2022 18:14:33 CET] [INFO]  Starting the python update
+[Mar 15 Mar 2022 18:14:33 CET] [STDERR] - tcsh
+[Mar 15 Mar 2022 18:14:33 CET] [STDERR] - xonsh
+[Mar 15 Mar 2022 18:14:33 CET] [STDERR] - zsh
+[Mar 15 Mar 2022 18:14:33 CET] [STDERR] - powershell
+[Mar 15 Mar 2022 18:14:33 CET] [STDERR] 
+[Mar 15 Mar 2022 18:14:33 CET] [STDERR] See 'conda init --help' for more information and options.
+[Mar 15 Mar 2022 18:14:33 CET] [STDERR] 
+[Mar 15 Mar 2022 18:14:33 CET] [STDERR] IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+[Mar 15 Mar 2022 18:14:33 CET] [STDERR] 
+[Mar 15 Mar 2022 18:14:33 CET] [STDERR] 
+[Mar 15 Mar 2022 18:14:33 CET] [STDERR] Traceback (most recent call last):
+[Mar 15 Mar 2022 18:14:33 CET] [STDERR] File "/Users/ale/Documents/Venezia/MappaDisabili/code/backend/static/update_everything.py", line 3, in <module>
+[Mar 15 Mar 2022 18:14:33 CET] [INFO]  < updating_dequa SCRIPTEXIT
+[Mar 15 Mar 2022 18:14:33 CET] [STDERR] from dequa_graph.utils import load_graphs, get_all_coordinates, add_waterbus_to_street
+[Mar 15 Mar 2022 18:14:33 CET] [STDERR] ModuleNotFoundError: No module named 'dequa_graph'
+[Mar 15 Mar 2022 22:40:24 CET] [INFO]  > updating_dequa SCRIPTENTRY
+[Mar 15 Mar 2022 22:40:24 CET] [DEBUG]  Activate environment
+[Mar 15 Mar 2022 22:40:24 CET] [INFO]  Starting the python update
+[Mar 15 Mar 2022 22:40:24 CET] [INFO]  < updating_dequa SCRIPTEXIT
+[Mar 15 Mar 2022 22:40:49 CET] [INFO]  > updating_dequa SCRIPTENTRY
+[Mar 15 Mar 2022 22:40:49 CET] [DEBUG]  Activate environment
+[Mar 15 Mar 2022 22:40:50 CET] [INFO]  Starting the python update
+[Mar 15 Mar 2022 22:40:50 CET] [STDERR] Traceback (most recent call last):
+[Mar 15 Mar 2022 22:40:50 CET] [INFO]  < updating_dequa SCRIPTEXIT
+[Mar 15 Mar 2022 22:40:50 CET] [STDERR] File "/Users/ale/Documents/Venezia/MappaDisabili/code/backend/static/update_everything.py", line 1, in <module>
+[Mar 15 Mar 2022 22:40:50 CET] [STDERR] import yaml
+[Mar 15 Mar 2022 22:40:50 CET] [STDERR] ModuleNotFoundError: No module named 'yaml'
+[Mar 15 Mar 2022 22:44:11 CET] [INFO]  > updating_dequa SCRIPTENTRY
+[Mar 15 Mar 2022 22:44:11 CET] [DEBUG]  Activate environment
+[Mar 15 Mar 2022 22:44:12 CET] [INFO]  Starting the python update
+[Mar 15 Mar 2022 22:44:12 CET] [STDERR] Traceback (most recent call last):
+[Mar 15 Mar 2022 22:44:12 CET] [INFO]  < updating_dequa SCRIPTEXIT
+[Mar 15 Mar 2022 22:44:12 CET] [STDERR] File "/Users/ale/Documents/Venezia/MappaDisabili/code/backend/static/update_everything.py", line 1, in <module>
+[Mar 15 Mar 2022 22:44:12 CET] [STDERR] import yaml
+[Mar 15 Mar 2022 22:44:12 CET] [STDERR] ModuleNotFoundError: No module named 'yaml'
+[Mar 15 Mar 2022 22:45:46 CET] [INFO]  > updating_dequa SCRIPTENTRY
+[Mar 15 Mar 2022 22:45:46 CET] [DEBUG]  Activate environment
+[Mar 15 Mar 2022 22:45:46 CET] [INFO]  Starting the python update
+[Mar 15 Mar 2022 22:45:46 CET] [STDERR] Traceback (most recent call last):
+[Mar 15 Mar 2022 22:45:46 CET] [INFO]  < updating_dequa SCRIPTEXIT
+[Mar 15 Mar 2022 22:45:46 CET] [STDERR] File "update_everything.py", line 1, in <module>
+[Mar 15 Mar 2022 22:45:46 CET] [STDERR] import yaml
+[Mar 15 Mar 2022 22:45:46 CET] [STDERR] ModuleNotFoundError: No module named 'yaml'
+[Mar 15 Mar 2022 22:46:33 CET] [INFO]  > updating_dequa SCRIPTENTRY
+[Mar 15 Mar 2022 22:46:33 CET] [DEBUG]  Activate environment
+[Mar 15 Mar 2022 22:46:33 CET] [INFO]  Starting the python update
+[Mar 15 Mar 2022 22:46:33 CET] [INFO]  < updating_dequa SCRIPTEXIT
+[Mar 15 Mar 2022 22:48:10 CET] [INFO]  > updating_dequa SCRIPTENTRY
+[Mar 15 Mar 2022 22:48:10 CET] [DEBUG]  Activate environment
+[Mar 15 Mar 2022 22:48:10 CET] [INFO]  Starting the python update
+[Mar 15 Mar 2022 22:48:18 CET] [STDERR] Traceback (most recent call last):
+[Mar 15 Mar 2022 22:48:18 CET] [STDERR] File "/Users/ale/Documents/Venezia/MappaDisabili/code/backend/static/update_everything.py", line 84, in <module>
+[Mar 15 Mar 2022 22:48:18 CET] [STDERR] main(logger)
+[Mar 15 Mar 2022 22:48:18 CET] [STDERR] File "/Users/ale/Documents/Venezia/MappaDisabili/code/backend/static/update_everything.py", line 53, in main
+[Mar 15 Mar 2022 22:48:18 CET] [STDERR] graph_street, graph_water = load_graphs(graph_street_path, graph_water_path)
+[Mar 15 Mar 2022 22:48:18 CET] [STDERR] File "/Users/ale/Documents/Venezia/MappaDisabili/code/dequa-graph/dequa_graph/utils.py", line 23, in load_graphs
+[Mar 15 Mar 2022 22:48:18 CET] [STDERR] all_graphs.append(gt.load_graph(path_gt))
+[Mar 15 Mar 2022 22:48:18 CET] [STDERR] File "/Users/ale/miniconda3/envs/atom/lib/python3.9/site-packages/graph_tool/__init__.py", line 3378, in load_graph
+[Mar 15 Mar 2022 22:48:18 CET] [STDERR] g.load(file_name, fmt, ignore_vp, ignore_ep, ignore_gp)
+[Mar 15 Mar 2022 22:48:18 CET] [STDERR] File "/Users/ale/miniconda3/envs/atom/lib/python3.9/site-packages/graph_tool/__init__.py", line 2924, in load
+[Mar 15 Mar 2022 22:48:18 CET] [STDERR] props = self.__graph.read_from_file("", file_name, fmt,
+[Mar 15 Mar 2022 22:48:18 CET] [STDERR] AttributeError: 'PosixPath' object has no attribute 'read'
+[Mar 15 Mar 2022 22:48:10 CET] [INFO]  < updating_dequa SCRIPTEXIT
+[Mar 15 Mar 2022 23:03:56 CET] [INFO]  > updating_dequa SCRIPTENTRY
+[Mar 15 Mar 2022 23:03:56 CET] [DEBUG]  Activate environment
+[Mar 15 Mar 2022 23:03:56 CET] [INFO]  Starting the python update
+[Mar 15 Mar 2022 23:04:14 CET] [STDERR] /Users/ale/Documents/Venezia/MappaDisabili/code/dequa-graph/dequa_graph/lib_gtfs.py:297: SettingWithCopyWarning:
+[Mar 15 Mar 2022 23:04:14 CET] [STDERR] A value is trying to be set on a copy of a slice from a DataFrame.
+[Mar 15 Mar 2022 23:04:14 CET] [STDERR] Try using .loc[row_indexer,col_indexer] = value instead
+[Mar 15 Mar 2022 23:04:14 CET] [STDERR] 
+[Mar 15 Mar 2022 23:04:14 CET] [STDERR] See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+[Mar 15 Mar 2022 23:04:14 CET] [STDERR] original_stop["stop_id"] = new_id
+[Mar 15 Mar 2022 23:04:27 CET] [STDERR] [2022-03-15 23:04:27,498] [dequa_graph:utils.py:110] [31m[ERROR][0m Some stops are not present in the graph: ['5098', '5778'][0m
+[Mar 15 Mar 2022 23:04:27 CET] [STDERR] [2022-03-15 23:04:27,499] [dequa_graph:utils.py:116] [37m[DEBUG][0m 1/171 - Route: 1[0m
+[Mar 15 Mar 2022 23:04:27 CET] [STDERR] [2022-03-15 23:04:27,990] [dequa_graph:utils.py:116] [37m[DEBUG][0m 2/171 - Route: 2[0m
+[Mar 15 Mar 2022 23:04:28 CET] [STDERR] [2022-03-15 23:04:28,259] [dequa_graph:utils.py:116] [37m[DEBUG][0m 3/171 - Route: 3[0m
+[Mar 15 Mar 2022 23:04:28 CET] [STDERR] [2022-03-15 23:04:28,480] [dequa_graph:utils.py:116] [37m[DEBUG][0m 4/171 - Route: 4[0m
+[Mar 15 Mar 2022 23:04:29 CET] [STDERR] [2022-03-15 23:04:29,234] [dequa_graph:utils.py:116] [37m[DEBUG][0m 5/171 - Route: 5[0m
+[Mar 15 Mar 2022 23:04:29 CET] [STDERR] [2022-03-15 23:04:29,930] [dequa_graph:utils.py:116] [37m[DEBUG][0m 6/171 - Route: 6[0m
+[Mar 15 Mar 2022 23:04:30 CET] [STDERR] [2022-03-15 23:04:30,669] [dequa_graph:utils.py:116] [37m[DEBUG][0m 7/171 - Route: 7[0m
+[Mar 15 Mar 2022 23:04:32 CET] [STDERR] [2022-03-15 23:04:32,007] [dequa_graph:utils.py:116] [37m[DEBUG][0m 8/171 - Route: 8[0m
+[Mar 15 Mar 2022 23:04:33 CET] [STDERR] [2022-03-15 23:04:33,252] [dequa_graph:utils.py:116] [37m[DEBUG][0m 9/171 - Route: 9[0m
+[Mar 15 Mar 2022 23:04:34 CET] [STDERR] [2022-03-15 23:04:34,267] [dequa_graph:utils.py:116] [37m[DEBUG][0m 10/171 - Route: 10[0m
+[Mar 15 Mar 2022 23:04:34 CET] [STDERR] [2022-03-15 23:04:34,817] [dequa_graph:utils.py:116] [37m[DEBUG][0m 11/171 - Route: 11[0m
+[Mar 15 Mar 2022 23:04:35 CET] [STDERR] [2022-03-15 23:04:35,304] [dequa_graph:utils.py:116] [37m[DEBUG][0m 12/171 - Route: 12[0m
+[Mar 15 Mar 2022 23:04:35 CET] [STDERR] [2022-03-15 23:04:35,816] [dequa_graph:utils.py:116] [37m[DEBUG][0m 13/171 - Route: 13[0m
+[Mar 15 Mar 2022 23:04:36 CET] [STDERR] [2022-03-15 23:04:36,679] [dequa_graph:utils.py:116] [37m[DEBUG][0m 14/171 - Route: 14[0m
+[Mar 15 Mar 2022 23:04:37 CET] [STDERR] [2022-03-15 23:04:37,716] [dequa_graph:utils.py:116] [37m[DEBUG][0m 15/171 - Route: 15[0m
+[Mar 15 Mar 2022 23:04:38 CET] [STDERR] [2022-03-15 23:04:38,768] [dequa_graph:utils.py:116] [37m[DEBUG][0m 16/171 - Route: 16[0m
+[Mar 15 Mar 2022 23:04:39 CET] [STDERR] [2022-03-15 23:04:39,069] [dequa_graph:utils.py:116] [37m[DEBUG][0m 17/171 - Route: 17[0m
+[Mar 15 Mar 2022 23:04:39 CET] [STDERR] [2022-03-15 23:04:39,751] [dequa_graph:utils.py:116] [37m[DEBUG][0m 18/171 - Route: 18[0m
+[Mar 15 Mar 2022 23:04:40 CET] [STDERR] [2022-03-15 23:04:40,409] [dequa_graph:utils.py:116] [37m[DEBUG][0m 19/171 - Route: 19[0m
+[Mar 15 Mar 2022 23:04:41 CET] [STDERR] [2022-03-15 23:04:41,126] [dequa_graph:utils.py:116] [37m[DEBUG][0m 20/171 - Route: 20[0m
+[Mar 15 Mar 2022 23:04:41 CET] [STDERR] [2022-03-15 23:04:41,278] [dequa_graph:utils.py:116] [37m[DEBUG][0m 21/171 - Route: 21[0m
+[Mar 15 Mar 2022 23:04:41 CET] [STDERR] [2022-03-15 23:04:41,394] [dequa_graph:utils.py:116] [37m[DEBUG][0m 22/171 - Route: 22[0m
+[Mar 15 Mar 2022 23:04:41 CET] [STDERR] [2022-03-15 23:04:41,536] [dequa_graph:utils.py:116] [37m[DEBUG][0m 23/171 - Route: 23[0m
+[Mar 15 Mar 2022 23:04:41 CET] [STDERR] [2022-03-15 23:04:41,715] [dequa_graph:utils.py:116] [37m[DEBUG][0m 24/171 - Route: 24[0m
+[Mar 15 Mar 2022 23:04:42 CET] [STDERR] [2022-03-15 23:04:42,113] [dequa_graph:utils.py:116] [37m[DEBUG][0m 25/171 - Route: 25[0m
+[Mar 15 Mar 2022 23:04:42 CET] [STDERR] [2022-03-15 23:04:42,375] [dequa_graph:utils.py:116] [37m[DEBUG][0m 26/171 - Route: 26[0m
+[Mar 15 Mar 2022 23:04:42 CET] [STDERR] [2022-03-15 23:04:42,587] [dequa_graph:utils.py:116] [37m[DEBUG][0m 27/171 - Route: 27[0m
+[Mar 15 Mar 2022 23:04:42 CET] [STDERR] [2022-03-15 23:04:42,813] [dequa_graph:utils.py:116] [37m[DEBUG][0m 28/171 - Route: 28[0m
+[Mar 15 Mar 2022 23:04:43 CET] [STDERR] [2022-03-15 23:04:43,194] [dequa_graph:utils.py:116] [37m[DEBUG][0m 29/171 - Route: 29[0m
+[Mar 15 Mar 2022 23:04:43 CET] [STDERR] [2022-03-15 23:04:43,466] [dequa_graph:utils.py:116] [37m[DEBUG][0m 30/171 - Route: 30[0m
+[Mar 15 Mar 2022 23:04:43 CET] [STDERR] [2022-03-15 23:04:43,692] [dequa_graph:utils.py:116] [37m[DEBUG][0m 31/171 - Route: 31[0m
+[Mar 15 Mar 2022 23:04:43 CET] [STDERR] [2022-03-15 23:04:43,836] [dequa_graph:utils.py:116] [37m[DEBUG][0m 32/171 - Route: 32[0m
+[Mar 15 Mar 2022 23:04:43 CET] [STDERR] [2022-03-15 23:04:43,959] [dequa_graph:utils.py:116] [37m[DEBUG][0m 33/171 - Route: 33[0m
+[Mar 15 Mar 2022 23:04:44 CET] [STDERR] [2022-03-15 23:04:44,237] [dequa_graph:utils.py:116] [37m[DEBUG][0m 34/171 - Route: 34[0m
+[Mar 15 Mar 2022 23:04:44 CET] [STDERR] [2022-03-15 23:04:44,516] [dequa_graph:utils.py:116] [37m[DEBUG][0m 35/171 - Route: 35[0m
+[Mar 15 Mar 2022 23:04:44 CET] [STDERR] [2022-03-15 23:04:44,764] [dequa_graph:utils.py:116] [37m[DEBUG][0m 36/171 - Route: 36[0m
+[Mar 15 Mar 2022 23:04:44 CET] [STDERR] [2022-03-15 23:04:44,975] [dequa_graph:utils.py:116] [37m[DEBUG][0m 37/171 - Route: 37[0m
+[Mar 15 Mar 2022 23:04:45 CET] [STDERR] [2022-03-15 23:04:45,256] [dequa_graph:utils.py:116] [37m[DEBUG][0m 38/171 - Route: 38[0m
+[Mar 15 Mar 2022 23:04:45 CET] [STDERR] [2022-03-15 23:04:45,436] [dequa_graph:utils.py:116] [37m[DEBUG][0m 39/171 - Route: 39[0m
+[Mar 15 Mar 2022 23:04:45 CET] [STDERR] [2022-03-15 23:04:45,797] [dequa_graph:utils.py:116] [37m[DEBUG][0m 40/171 - Route: 40[0m
+[Mar 15 Mar 2022 23:04:46 CET] [STDERR] [2022-03-15 23:04:46,186] [dequa_graph:utils.py:116] [37m[DEBUG][0m 41/171 - Route: 41[0m
+[Mar 15 Mar 2022 23:04:46 CET] [STDERR] [2022-03-15 23:04:46,552] [dequa_graph:utils.py:116] [37m[DEBUG][0m 42/171 - Route: 42[0m
+[Mar 15 Mar 2022 23:04:46 CET] [STDERR] [2022-03-15 23:04:46,896] [dequa_graph:utils.py:116] [37m[DEBUG][0m 43/171 - Route: 43[0m
+[Mar 15 Mar 2022 23:04:47 CET] [STDERR] [2022-03-15 23:04:47,091] [dequa_graph:utils.py:116] [37m[DEBUG][0m 44/171 - Route: 44[0m
+[Mar 15 Mar 2022 23:04:47 CET] [STDERR] [2022-03-15 23:04:47,254] [dequa_graph:utils.py:116] [37m[DEBUG][0m 45/171 - Route: 45[0m
+[Mar 15 Mar 2022 23:04:47 CET] [STDERR] [2022-03-15 23:04:47,372] [dequa_graph:utils.py:116] [37m[DEBUG][0m 46/171 - Route: 46[0m
+[Mar 15 Mar 2022 23:04:47 CET] [STDERR] [2022-03-15 23:04:47,486] [dequa_graph:utils.py:116] [37m[DEBUG][0m 47/171 - Route: 47[0m
+[Mar 15 Mar 2022 23:04:47 CET] [STDERR] [2022-03-15 23:04:47,612] [dequa_graph:utils.py:116] [37m[DEBUG][0m 48/171 - Route: 48[0m
+[Mar 15 Mar 2022 23:04:47 CET] [STDERR] [2022-03-15 23:04:47,731] [dequa_graph:utils.py:116] [37m[DEBUG][0m 49/171 - Route: 49[0m
+[Mar 15 Mar 2022 23:04:48 CET] [STDERR] [2022-03-15 23:04:48,062] [dequa_graph:utils.py:116] [37m[DEBUG][0m 50/171 - Route: 50[0m
+[Mar 15 Mar 2022 23:04:48 CET] [STDERR] [2022-03-15 23:04:48,326] [dequa_graph:utils.py:116] [37m[DEBUG][0m 51/171 - Route: 51[0m
+[Mar 15 Mar 2022 23:04:48 CET] [STDERR] [2022-03-15 23:04:48,444] [dequa_graph:utils.py:116] [37m[DEBUG][0m 52/171 - Route: 52[0m
+[Mar 15 Mar 2022 23:04:48 CET] [STDERR] [2022-03-15 23:04:48,557] [dequa_graph:utils.py:116] [37m[DEBUG][0m 53/171 - Route: 53[0m
+[Mar 15 Mar 2022 23:04:49 CET] [STDERR] [2022-03-15 23:04:49,942] [dequa_graph:utils.py:116] [37m[DEBUG][0m 54/171 - Route: 54[0m
+[Mar 15 Mar 2022 23:04:51 CET] [STDERR] [2022-03-15 23:04:51,743] [dequa_graph:utils.py:116] [37m[DEBUG][0m 55/171 - Route: 55[0m
+[Mar 15 Mar 2022 23:04:54 CET] [STDERR] [2022-03-15 23:04:54,896] [dequa_graph:utils.py:116] [37m[DEBUG][0m 56/171 - Route: 56[0m
+[Mar 15 Mar 2022 23:04:56 CET] [STDERR] [2022-03-15 23:04:56,907] [dequa_graph:utils.py:116] [37m[DEBUG][0m 57/171 - Route: 57[0m
+[Mar 15 Mar 2022 23:04:57 CET] [STDERR] [2022-03-15 23:04:57,274] [dequa_graph:utils.py:116] [37m[DEBUG][0m 58/171 - Route: 58[0m
+[Mar 15 Mar 2022 23:04:57 CET] [STDERR] [2022-03-15 23:04:57,569] [dequa_graph:utils.py:116] [37m[DEBUG][0m 59/171 - Route: 59[0m
+[Mar 15 Mar 2022 23:04:57 CET] [STDERR] [2022-03-15 23:04:57,828] [dequa_graph:utils.py:116] [37m[DEBUG][0m 60/171 - Route: 60[0m
+[Mar 15 Mar 2022 23:04:58 CET] [STDERR] [2022-03-15 23:04:58,367] [dequa_graph:utils.py:116] [37m[DEBUG][0m 61/171 - Route: 61[0m
+[Mar 15 Mar 2022 23:04:58 CET] [STDERR] [2022-03-15 23:04:58,689] [dequa_graph:utils.py:116] [37m[DEBUG][0m 62/171 - Route: 62[0m
+[Mar 15 Mar 2022 23:04:59 CET] [STDERR] [2022-03-15 23:04:59,006] [dequa_graph:utils.py:116] [37m[DEBUG][0m 63/171 - Route: 63[0m
+[Mar 15 Mar 2022 23:04:59 CET] [STDERR] [2022-03-15 23:04:59,318] [dequa_graph:utils.py:116] [37m[DEBUG][0m 64/171 - Route: 64[0m
+[Mar 15 Mar 2022 23:04:59 CET] [STDERR] [2022-03-15 23:04:59,604] [dequa_graph:utils.py:116] [37m[DEBUG][0m 65/171 - Route: 65[0m
+[Mar 15 Mar 2022 23:04:59 CET] [STDERR] [2022-03-15 23:04:59,854] [dequa_graph:utils.py:116] [37m[DEBUG][0m 66/171 - Route: 66[0m
+[Mar 15 Mar 2022 23:05:00 CET] [STDERR] [2022-03-15 23:05:00,115] [dequa_graph:utils.py:116] [37m[DEBUG][0m 67/171 - Route: 67[0m
+[Mar 15 Mar 2022 23:05:01 CET] [STDERR] [2022-03-15 23:05:01,294] [dequa_graph:utils.py:116] [37m[DEBUG][0m 68/171 - Route: 68[0m
+[Mar 15 Mar 2022 23:05:02 CET] [STDERR] [2022-03-15 23:05:02,371] [dequa_graph:utils.py:116] [37m[DEBUG][0m 69/171 - Route: 69[0m
+[Mar 15 Mar 2022 23:05:03 CET] [STDERR] [2022-03-15 23:05:03,307] [dequa_graph:utils.py:116] [37m[DEBUG][0m 70/171 - Route: 70[0m
+[Mar 15 Mar 2022 23:05:03 CET] [STDERR] [2022-03-15 23:05:03,781] [dequa_graph:utils.py:116] [37m[DEBUG][0m 71/171 - Route: 71[0m
+[Mar 15 Mar 2022 23:05:04 CET] [STDERR] [2022-03-15 23:05:04,054] [dequa_graph:utils.py:116] [37m[DEBUG][0m 72/171 - Route: 72[0m
+[Mar 15 Mar 2022 23:05:04 CET] [STDERR] [2022-03-15 23:05:04,681] [dequa_graph:utils.py:116] [37m[DEBUG][0m 73/171 - Route: 73[0m
+[Mar 15 Mar 2022 23:05:05 CET] [STDERR] [2022-03-15 23:05:05,346] [dequa_graph:utils.py:116] [37m[DEBUG][0m 74/171 - Route: 74[0m
+[Mar 15 Mar 2022 23:05:05 CET] [STDERR] [2022-03-15 23:05:05,986] [dequa_graph:utils.py:116] [37m[DEBUG][0m 75/171 - Route: 75[0m
+[Mar 15 Mar 2022 23:05:06 CET] [STDERR] [2022-03-15 23:05:06,574] [dequa_graph:utils.py:116] [37m[DEBUG][0m 76/171 - Route: 76[0m
+[Mar 15 Mar 2022 23:05:07 CET] [STDERR] [2022-03-15 23:05:07,185] [dequa_graph:utils.py:116] [37m[DEBUG][0m 77/171 - Route: 77[0m
+[Mar 15 Mar 2022 23:05:07 CET] [STDERR] [2022-03-15 23:05:07,634] [dequa_graph:utils.py:116] [37m[DEBUG][0m 78/171 - Route: 78[0m
+[Mar 15 Mar 2022 23:05:08 CET] [STDERR] [2022-03-15 23:05:08,050] [dequa_graph:utils.py:116] [37m[DEBUG][0m 79/171 - Route: 79[0m
+[Mar 15 Mar 2022 23:05:08 CET] [STDERR] [2022-03-15 23:05:08,466] [dequa_graph:utils.py:116] [37m[DEBUG][0m 80/171 - Route: 80[0m
+[Mar 15 Mar 2022 23:05:08 CET] [STDERR] [2022-03-15 23:05:08,758] [dequa_graph:utils.py:116] [37m[DEBUG][0m 81/171 - Route: 81[0m
+[Mar 15 Mar 2022 23:05:09 CET] [STDERR] [2022-03-15 23:05:09,017] [dequa_graph:utils.py:116] [37m[DEBUG][0m 82/171 - Route: 82[0m
+[Mar 15 Mar 2022 23:05:09 CET] [STDERR] [2022-03-15 23:05:09,264] [dequa_graph:utils.py:116] [37m[DEBUG][0m 83/171 - Route: 83[0m
+[Mar 15 Mar 2022 23:05:10 CET] [STDERR] [2022-03-15 23:05:10,029] [dequa_graph:utils.py:116] [37m[DEBUG][0m 84/171 - Route: 84[0m
+[Mar 15 Mar 2022 23:05:10 CET] [STDERR] [2022-03-15 23:05:10,792] [dequa_graph:utils.py:116] [37m[DEBUG][0m 85/171 - Route: 85[0m
+[Mar 15 Mar 2022 23:05:11 CET] [STDERR] [2022-03-15 23:05:11,617] [dequa_graph:utils.py:116] [37m[DEBUG][0m 86/171 - Route: 86[0m
+[Mar 15 Mar 2022 23:05:12 CET] [STDERR] [2022-03-15 23:05:12,092] [dequa_graph:utils.py:116] [37m[DEBUG][0m 87/171 - Route: 87[0m
+[Mar 15 Mar 2022 23:05:12 CET] [STDERR] [2022-03-15 23:05:12,543] [dequa_graph:utils.py:116] [37m[DEBUG][0m 88/171 - Route: 88[0m
+[Mar 15 Mar 2022 23:05:13 CET] [STDERR] [2022-03-15 23:05:12,999] [dequa_graph:utils.py:116] [37m[DEBUG][0m 89/171 - Route: 89[0m
+[Mar 15 Mar 2022 23:05:13 CET] [STDERR] [2022-03-15 23:05:13,332] [dequa_graph:utils.py:116] [37m[DEBUG][0m 90/171 - Route: 90[0m
+[Mar 15 Mar 2022 23:05:13 CET] [STDERR] [2022-03-15 23:05:13,623] [dequa_graph:utils.py:116] [37m[DEBUG][0m 91/171 - Route: 91[0m
+[Mar 15 Mar 2022 23:05:13 CET] [STDERR] [2022-03-15 23:05:13,855] [dequa_graph:utils.py:116] [37m[DEBUG][0m 92/171 - Route: 92[0m
+[Mar 15 Mar 2022 23:05:14 CET] [STDERR] [2022-03-15 23:05:14,172] [dequa_graph:utils.py:116] [37m[DEBUG][0m 93/171 - Route: 93[0m
+[Mar 15 Mar 2022 23:05:14 CET] [STDERR] [2022-03-15 23:05:14,462] [dequa_graph:utils.py:116] [37m[DEBUG][0m 94/171 - Route: 94[0m
+[Mar 15 Mar 2022 23:05:14 CET] [STDERR] [2022-03-15 23:05:14,812] [dequa_graph:utils.py:116] [37m[DEBUG][0m 95/171 - Route: 95[0m
+[Mar 15 Mar 2022 23:05:15 CET] [STDERR] [2022-03-15 23:05:15,189] [dequa_graph:utils.py:116] [37m[DEBUG][0m 96/171 - Route: 96[0m
+[Mar 15 Mar 2022 23:05:15 CET] [STDERR] [2022-03-15 23:05:15,334] [dequa_graph:utils.py:116] [37m[DEBUG][0m 97/171 - Route: 97[0m
+[Mar 15 Mar 2022 23:05:16 CET] [STDERR] [2022-03-15 23:05:16,144] [dequa_graph:utils.py:116] [37m[DEBUG][0m 98/171 - Route: 98[0m
+[Mar 15 Mar 2022 23:05:16 CET] [STDERR] [2022-03-15 23:05:16,752] [dequa_graph:utils.py:116] [37m[DEBUG][0m 99/171 - Route: 99[0m
+[Mar 15 Mar 2022 23:05:17 CET] [STDERR] [2022-03-15 23:05:17,360] [dequa_graph:utils.py:116] [37m[DEBUG][0m 100/171 - Route: 100[0m
+[Mar 15 Mar 2022 23:05:17 CET] [STDERR] [2022-03-15 23:05:17,706] [dequa_graph:utils.py:116] [37m[DEBUG][0m 101/171 - Route: 101[0m
+[Mar 15 Mar 2022 23:05:17 CET] [STDERR] [2022-03-15 23:05:17,904] [dequa_graph:utils.py:116] [37m[DEBUG][0m 102/171 - Route: 102[0m
+[Mar 15 Mar 2022 23:05:18 CET] [STDERR] [2022-03-15 23:05:18,774] [dequa_graph:utils.py:116] [37m[DEBUG][0m 103/171 - Route: 103[0m
+[Mar 15 Mar 2022 23:05:18 CET] [STDERR] [2022-03-15 23:05:18,914] [dequa_graph:utils.py:116] [37m[DEBUG][0m 104/171 - Route: 104[0m
+[Mar 15 Mar 2022 23:05:19 CET] [STDERR] [2022-03-15 23:05:19,077] [dequa_graph:utils.py:116] [37m[DEBUG][0m 105/171 - Route: 105[0m
+[Mar 15 Mar 2022 23:05:19 CET] [STDERR] [2022-03-15 23:05:19,206] [dequa_graph:utils.py:116] [37m[DEBUG][0m 106/171 - Route: 106[0m
+[Mar 15 Mar 2022 23:05:20 CET] [STDERR] [2022-03-15 23:05:20,023] [dequa_graph:utils.py:116] [37m[DEBUG][0m 107/171 - Route: 107[0m
+[Mar 15 Mar 2022 23:05:20 CET] [STDERR] [2022-03-15 23:05:20,609] [dequa_graph:utils.py:116] [37m[DEBUG][0m 108/171 - Route: 108[0m
+[Mar 15 Mar 2022 23:05:21 CET] [STDERR] [2022-03-15 23:05:21,189] [dequa_graph:utils.py:116] [37m[DEBUG][0m 109/171 - Route: 109[0m
+[Mar 15 Mar 2022 23:05:21 CET] [STDERR] [2022-03-15 23:05:21,569] [dequa_graph:utils.py:116] [37m[DEBUG][0m 110/171 - Route: 110[0m
+[Mar 15 Mar 2022 23:05:21 CET] [STDERR] [2022-03-15 23:05:21,911] [dequa_graph:utils.py:116] [37m[DEBUG][0m 111/171 - Route: 111[0m
+[Mar 15 Mar 2022 23:05:22 CET] [STDERR] [2022-03-15 23:05:22,089] [dequa_graph:utils.py:116] [37m[DEBUG][0m 112/171 - Route: 112[0m
+[Mar 15 Mar 2022 23:05:22 CET] [STDERR] [2022-03-15 23:05:22,207] [dequa_graph:utils.py:116] [37m[DEBUG][0m 113/171 - Route: 113[0m
+[Mar 15 Mar 2022 23:05:22 CET] [STDERR] [2022-03-15 23:05:22,478] [dequa_graph:utils.py:116] [37m[DEBUG][0m 114/171 - Route: 114[0m
+[Mar 15 Mar 2022 23:05:22 CET] [STDERR] [2022-03-15 23:05:22,730] [dequa_graph:utils.py:116] [37m[DEBUG][0m 115/171 - Route: 115[0m
+[Mar 15 Mar 2022 23:05:22 CET] [STDERR] [2022-03-15 23:05:22,901] [dequa_graph:utils.py:116] [37m[DEBUG][0m 116/171 - Route: 116[0m
+[Mar 15 Mar 2022 23:05:23 CET] [STDERR] [2022-03-15 23:05:23,094] [dequa_graph:utils.py:116] [37m[DEBUG][0m 117/171 - Route: 117[0m
+[Mar 15 Mar 2022 23:05:23 CET] [STDERR] [2022-03-15 23:05:23,241] [dequa_graph:utils.py:116] [37m[DEBUG][0m 118/171 - Route: 118[0m
+[Mar 15 Mar 2022 23:05:23 CET] [STDERR] [2022-03-15 23:05:23,356] [dequa_graph:utils.py:116] [37m[DEBUG][0m 119/171 - Route: 119[0m
+[Mar 15 Mar 2022 23:05:23 CET] [STDERR] [2022-03-15 23:05:23,579] [dequa_graph:utils.py:116] [37m[DEBUG][0m 120/171 - Route: 120[0m
+[Mar 15 Mar 2022 23:05:23 CET] [STDERR] [2022-03-15 23:05:23,864] [dequa_graph:utils.py:116] [37m[DEBUG][0m 121/171 - Route: 121[0m
+[Mar 15 Mar 2022 23:05:24 CET] [STDERR] [2022-03-15 23:05:24,149] [dequa_graph:utils.py:116] [37m[DEBUG][0m 122/171 - Route: 122[0m
+[Mar 15 Mar 2022 23:05:24 CET] [STDERR] [2022-03-15 23:05:24,398] [dequa_graph:utils.py:116] [37m[DEBUG][0m 123/171 - Route: 123[0m
+[Mar 15 Mar 2022 23:05:24 CET] [STDERR] [2022-03-15 23:05:24,634] [dequa_graph:utils.py:116] [37m[DEBUG][0m 124/171 - Route: 124[0m
+[Mar 15 Mar 2022 23:05:24 CET] [STDERR] [2022-03-15 23:05:24,811] [dequa_graph:utils.py:116] [37m[DEBUG][0m 125/171 - Route: 125[0m
+[Mar 15 Mar 2022 23:05:24 CET] [STDERR] [2022-03-15 23:05:24,956] [dequa_graph:utils.py:116] [37m[DEBUG][0m 126/171 - Route: 126[0m
+[Mar 15 Mar 2022 23:05:25 CET] [STDERR] [2022-03-15 23:05:25,094] [dequa_graph:utils.py:116] [37m[DEBUG][0m 127/171 - Route: 127[0m
+[Mar 15 Mar 2022 23:05:25 CET] [STDERR] [2022-03-15 23:05:25,401] [dequa_graph:utils.py:116] [37m[DEBUG][0m 128/171 - Route: 128[0m
+[Mar 15 Mar 2022 23:05:25 CET] [STDERR] [2022-03-15 23:05:25,748] [dequa_graph:utils.py:116] [37m[DEBUG][0m 129/171 - Route: 129[0m
+[Mar 15 Mar 2022 23:05:25 CET] [STDERR] [2022-03-15 23:05:25,876] [dequa_graph:utils.py:116] [37m[DEBUG][0m 130/171 - Route: 130[0m
+[Mar 15 Mar 2022 23:05:25 CET] [STDERR] [2022-03-15 23:05:25,993] [dequa_graph:utils.py:116] [37m[DEBUG][0m 131/171 - Route: 131[0m
+[Mar 15 Mar 2022 23:05:26 CET] [STDERR] [2022-03-15 23:05:26,205] [dequa_graph:utils.py:116] [37m[DEBUG][0m 132/171 - Route: 132[0m
+[Mar 15 Mar 2022 23:05:26 CET] [STDERR] [2022-03-15 23:05:26,376] [dequa_graph:utils.py:116] [37m[DEBUG][0m 133/171 - Route: 133[0m
+[Mar 15 Mar 2022 23:05:26 CET] [STDERR] [2022-03-15 23:05:26,546] [dequa_graph:utils.py:116] [37m[DEBUG][0m 134/171 - Route: 134[0m
+[Mar 15 Mar 2022 23:05:26 CET] [STDERR] [2022-03-15 23:05:26,698] [dequa_graph:utils.py:116] [37m[DEBUG][0m 135/171 - Route: 135[0m
+[Mar 15 Mar 2022 23:05:26 CET] [STDERR] [2022-03-15 23:05:26,841] [dequa_graph:utils.py:116] [37m[DEBUG][0m 136/171 - Route: 136[0m
+[Mar 15 Mar 2022 23:05:27 CET] [STDERR] [2022-03-15 23:05:27,016] [dequa_graph:utils.py:116] [37m[DEBUG][0m 137/171 - Route: 137[0m
+[Mar 15 Mar 2022 23:05:27 CET] [STDERR] [2022-03-15 23:05:27,179] [dequa_graph:utils.py:116] [37m[DEBUG][0m 138/171 - Route: 138[0m
+[Mar 15 Mar 2022 23:05:27 CET] [STDERR] [2022-03-15 23:05:27,324] [dequa_graph:utils.py:116] [37m[DEBUG][0m 139/171 - Route: 139[0m
+[Mar 15 Mar 2022 23:05:27 CET] [STDERR] [2022-03-15 23:05:27,490] [dequa_graph:utils.py:116] [37m[DEBUG][0m 140/171 - Route: 140[0m
+[Mar 15 Mar 2022 23:05:27 CET] [STDERR] [2022-03-15 23:05:27,670] [dequa_graph:utils.py:116] [37m[DEBUG][0m 141/171 - Route: 141[0m
+[Mar 15 Mar 2022 23:05:28 CET] [STDERR] [2022-03-15 23:05:28,091] [dequa_graph:utils.py:116] [37m[DEBUG][0m 142/171 - Route: 142[0m
+[Mar 15 Mar 2022 23:05:28 CET] [STDERR] [2022-03-15 23:05:28,456] [dequa_graph:utils.py:116] [37m[DEBUG][0m 143/171 - Route: 143[0m
+[Mar 15 Mar 2022 23:05:28 CET] [STDERR] [2022-03-15 23:05:28,577] [dequa_graph:utils.py:116] [37m[DEBUG][0m 144/171 - Route: 144[0m
+[Mar 15 Mar 2022 23:05:28 CET] [STDERR] [2022-03-15 23:05:28,960] [dequa_graph:utils.py:116] [37m[DEBUG][0m 145/171 - Route: 145[0m
+[Mar 15 Mar 2022 23:05:29 CET] [STDERR] [2022-03-15 23:05:29,422] [dequa_graph:utils.py:116] [37m[DEBUG][0m 146/171 - Route: 146[0m
+[Mar 15 Mar 2022 23:05:29 CET] [STDERR] [2022-03-15 23:05:29,791] [dequa_graph:utils.py:116] [37m[DEBUG][0m 147/171 - Route: 147[0m
+[Mar 15 Mar 2022 23:05:29 CET] [STDERR] [2022-03-15 23:05:29,909] [dequa_graph:utils.py:116] [37m[DEBUG][0m 148/171 - Route: 148[0m
+[Mar 15 Mar 2022 23:05:30 CET] [STDERR] [2022-03-15 23:05:30,291] [dequa_graph:utils.py:116] [37m[DEBUG][0m 149/171 - Route: 149[0m
+[Mar 15 Mar 2022 23:05:30 CET] [STDERR] [2022-03-15 23:05:30,666] [dequa_graph:utils.py:116] [37m[DEBUG][0m 150/171 - Route: 150[0m
+[Mar 15 Mar 2022 23:05:31 CET] [STDERR] [2022-03-15 23:05:31,031] [dequa_graph:utils.py:116] [37m[DEBUG][0m 151/171 - Route: 151[0m
+[Mar 15 Mar 2022 23:05:31 CET] [STDERR] [2022-03-15 23:05:31,216] [dequa_graph:utils.py:116] [37m[DEBUG][0m 152/171 - Route: 152[0m
+[Mar 15 Mar 2022 23:05:31 CET] [STDERR] [2022-03-15 23:05:31,352] [dequa_graph:utils.py:116] [37m[DEBUG][0m 153/171 - Route: 153[0m
+[Mar 15 Mar 2022 23:05:31 CET] [STDERR] [2022-03-15 23:05:31,467] [dequa_graph:utils.py:116] [37m[DEBUG][0m 154/171 - Route: 154[0m
+[Mar 15 Mar 2022 23:05:31 CET] [STDERR] [2022-03-15 23:05:31,581] [dequa_graph:utils.py:116] [37m[DEBUG][0m 155/171 - Route: 155[0m
+[Mar 15 Mar 2022 23:05:31 CET] [STDERR] [2022-03-15 23:05:31,650] [dequa_graph:utils.py:125] [33m[WARNING][0m Missing stop 5049 in route 155[0m
+[Mar 15 Mar 2022 23:05:31 CET] [STDERR] [2022-03-15 23:05:31,650] [dequa_graph:utils.py:125] [33m[WARNING][0m Missing stop 5778 in route 155[0m
+[Mar 15 Mar 2022 23:05:31 CET] [STDERR] [2022-03-15 23:05:31,651] [dequa_graph:utils.py:116] [37m[DEBUG][0m 156/171 - Route: 156[0m
+[Mar 15 Mar 2022 23:05:31 CET] [STDERR] [2022-03-15 23:05:31,824] [dequa_graph:utils.py:116] [37m[DEBUG][0m 157/171 - Route: 157[0m
+[Mar 15 Mar 2022 23:05:32 CET] [STDERR] [2022-03-15 23:05:32,041] [dequa_graph:utils.py:116] [37m[DEBUG][0m 158/171 - Route: 158[0m
+[Mar 15 Mar 2022 23:05:32 CET] [STDERR] [2022-03-15 23:05:32,242] [dequa_graph:utils.py:116] [37m[DEBUG][0m 159/171 - Route: 159[0m
+[Mar 15 Mar 2022 23:05:32 CET] [STDERR] [2022-03-15 23:05:32,485] [dequa_graph:utils.py:116] [37m[DEBUG][0m 160/171 - Route: 160[0m
+[Mar 15 Mar 2022 23:05:32 CET] [STDERR] [2022-03-15 23:05:32,710] [dequa_graph:utils.py:116] [37m[DEBUG][0m 161/171 - Route: 161[0m
+[Mar 15 Mar 2022 23:05:32 CET] [STDERR] [2022-03-15 23:05:32,933] [dequa_graph:utils.py:116] [37m[DEBUG][0m 162/171 - Route: 162[0m
+[Mar 15 Mar 2022 23:05:33 CET] [STDERR] [2022-03-15 23:05:33,256] [dequa_graph:utils.py:116] [37m[DEBUG][0m 163/171 - Route: 163[0m
+[Mar 15 Mar 2022 23:05:33 CET] [STDERR] [2022-03-15 23:05:33,627] [dequa_graph:utils.py:116] [37m[DEBUG][0m 164/171 - Route: 164[0m
+[Mar 15 Mar 2022 23:05:33 CET] [STDERR] [2022-03-15 23:05:33,900] [dequa_graph:utils.py:116] [37m[DEBUG][0m 165/171 - Route: 165[0m
+[Mar 15 Mar 2022 23:05:34 CET] [STDERR] [2022-03-15 23:05:34,167] [dequa_graph:utils.py:116] [37m[DEBUG][0m 166/171 - Route: 166[0m
+[Mar 15 Mar 2022 23:05:34 CET] [STDERR] [2022-03-15 23:05:34,505] [dequa_graph:utils.py:116] [37m[DEBUG][0m 167/171 - Route: 167[0m
+[Mar 15 Mar 2022 23:05:34 CET] [STDERR] [2022-03-15 23:05:34,819] [dequa_graph:utils.py:116] [37m[DEBUG][0m 168/171 - Route: 168[0m
+[Mar 15 Mar 2022 23:05:35 CET] [STDERR] [2022-03-15 23:05:35,142] [dequa_graph:utils.py:116] [37m[DEBUG][0m 169/171 - Route: 169[0m
+[Mar 15 Mar 2022 23:05:35 CET] [STDERR] [2022-03-15 23:05:35,403] [dequa_graph:utils.py:116] [37m[DEBUG][0m 170/171 - Route: 170[0m
+[Mar 15 Mar 2022 23:05:35 CET] [STDERR] [2022-03-15 23:05:35,619] [dequa_graph:utils.py:116] [37m[DEBUG][0m 171/171 - Route: 171[0m
+[Mar 15 Mar 2022 23:05:35 CET] [STDERR] Traceback (most recent call last):
+[Mar 15 Mar 2022 23:05:35 CET] [STDERR] File "/Users/ale/Documents/Venezia/MappaDisabili/code/backend/static/update_everything.py", line 84, in <module>
+[Mar 15 Mar 2022 23:05:35 CET] [STDERR] main(logger)
+[Mar 15 Mar 2022 23:05:35 CET] [STDERR] File "/Users/ale/Documents/Venezia/MappaDisabili/code/backend/static/update_everything.py", line 62, in main
+[Mar 15 Mar 2022 23:05:35 CET] [STDERR] graph_street_street_plus_waterbus.save(new_graph_street_plus_waterbus_path)
+[Mar 15 Mar 2022 23:05:35 CET] [STDERR] File "/Users/ale/miniconda3/envs/atom/lib/python3.9/site-packages/graph_tool/__init__.py", line 3014, in save
+[Mar 15 Mar 2022 23:05:35 CET] [STDERR] u.__graph.write_to_file("", file_name, fmt, props)
+[Mar 15 Mar 2022 23:05:35 CET] [STDERR] AttributeError: 'PosixPath' object has no attribute 'write'
+[Mar 15 Mar 2022 23:03:56 CET] [INFO]  < updating_dequa SCRIPTEXIT
+[Mar 15 Mar 2022 23:06:41 CET] [INFO]  > updating_dequa SCRIPTENTRY
+[Mar 15 Mar 2022 23:06:41 CET] [DEBUG]  Activate environment
+[Mar 15 Mar 2022 23:06:41 CET] [INFO]  Starting the python update
+[Mar 15 Mar 2022 23:06:57 CET] [STDERR] /Users/ale/Documents/Venezia/MappaDisabili/code/dequa-graph/dequa_graph/lib_gtfs.py:297: SettingWithCopyWarning:
+[Mar 15 Mar 2022 23:06:57 CET] [STDERR] A value is trying to be set on a copy of a slice from a DataFrame.
+[Mar 15 Mar 2022 23:06:57 CET] [STDERR] Try using .loc[row_indexer,col_indexer] = value instead
+[Mar 15 Mar 2022 23:06:57 CET] [STDERR] 
+[Mar 15 Mar 2022 23:06:57 CET] [STDERR] See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+[Mar 15 Mar 2022 23:06:57 CET] [STDERR] original_stop["stop_id"] = new_id
+[Mar 15 Mar 2022 23:07:09 CET] [STDERR] [2022-03-15 23:07:09,442] [dequa_graph:utils.py:110] [31m[ERROR][0m Some stops are not present in the graph: ['5098', '5778'][0m
+[Mar 15 Mar 2022 23:07:09 CET] [STDERR] [2022-03-15 23:07:09,442] [dequa_graph:utils.py:116] [37m[DEBUG][0m 1/171 - Route: 1[0m
+[Mar 15 Mar 2022 23:07:09 CET] [STDERR] [2022-03-15 23:07:09,871] [dequa_graph:utils.py:116] [37m[DEBUG][0m 2/171 - Route: 2[0m
+[Mar 15 Mar 2022 23:07:10 CET] [STDERR] [2022-03-15 23:07:10,134] [dequa_graph:utils.py:116] [37m[DEBUG][0m 3/171 - Route: 3[0m
+[Mar 15 Mar 2022 23:07:10 CET] [STDERR] [2022-03-15 23:07:10,350] [dequa_graph:utils.py:116] [37m[DEBUG][0m 4/171 - Route: 4[0m
+[Mar 15 Mar 2022 23:07:11 CET] [STDERR] [2022-03-15 23:07:11,043] [dequa_graph:utils.py:116] [37m[DEBUG][0m 5/171 - Route: 5[0m
+[Mar 15 Mar 2022 23:07:11 CET] [STDERR] [2022-03-15 23:07:11,963] [dequa_graph:utils.py:116] [37m[DEBUG][0m 6/171 - Route: 6[0m
+[Mar 15 Mar 2022 23:07:13 CET] [STDERR] [2022-03-15 23:07:13,201] [dequa_graph:utils.py:116] [37m[DEBUG][0m 7/171 - Route: 7[0m
+[Mar 15 Mar 2022 23:07:14 CET] [STDERR] [2022-03-15 23:07:14,093] [dequa_graph:utils.py:116] [37m[DEBUG][0m 8/171 - Route: 8[0m
+[Mar 15 Mar 2022 23:07:15 CET] [STDERR] [2022-03-15 23:07:15,057] [dequa_graph:utils.py:116] [37m[DEBUG][0m 9/171 - Route: 9[0m
+[Mar 15 Mar 2022 23:07:16 CET] [STDERR] [2022-03-15 23:07:16,009] [dequa_graph:utils.py:116] [37m[DEBUG][0m 10/171 - Route: 10[0m
+[Mar 15 Mar 2022 23:07:16 CET] [STDERR] [2022-03-15 23:07:16,547] [dequa_graph:utils.py:116] [37m[DEBUG][0m 11/171 - Route: 11[0m
+[Mar 15 Mar 2022 23:07:16 CET] [STDERR] [2022-03-15 23:07:16,855] [dequa_graph:utils.py:116] [37m[DEBUG][0m 12/171 - Route: 12[0m
+[Mar 15 Mar 2022 23:07:17 CET] [STDERR] [2022-03-15 23:07:17,334] [dequa_graph:utils.py:116] [37m[DEBUG][0m 13/171 - Route: 13[0m
+[Mar 15 Mar 2022 23:07:18 CET] [STDERR] [2022-03-15 23:07:18,375] [dequa_graph:utils.py:116] [37m[DEBUG][0m 14/171 - Route: 14[0m
+[Mar 15 Mar 2022 23:07:19 CET] [STDERR] [2022-03-15 23:07:19,384] [dequa_graph:utils.py:116] [37m[DEBUG][0m 15/171 - Route: 15[0m
+[Mar 15 Mar 2022 23:07:20 CET] [STDERR] [2022-03-15 23:07:20,382] [dequa_graph:utils.py:116] [37m[DEBUG][0m 16/171 - Route: 16[0m
+[Mar 15 Mar 2022 23:07:20 CET] [STDERR] [2022-03-15 23:07:20,787] [dequa_graph:utils.py:116] [37m[DEBUG][0m 17/171 - Route: 17[0m
+[Mar 15 Mar 2022 23:07:21 CET] [STDERR] [2022-03-15 23:07:21,795] [dequa_graph:utils.py:116] [37m[DEBUG][0m 18/171 - Route: 18[0m
+[Mar 15 Mar 2022 23:07:22 CET] [STDERR] [2022-03-15 23:07:22,850] [dequa_graph:utils.py:116] [37m[DEBUG][0m 19/171 - Route: 19[0m
+[Mar 15 Mar 2022 23:07:24 CET] [STDERR] [2022-03-15 23:07:24,105] [dequa_graph:utils.py:116] [37m[DEBUG][0m 20/171 - Route: 20[0m
+[Mar 15 Mar 2022 23:07:24 CET] [STDERR] [2022-03-15 23:07:24,441] [dequa_graph:utils.py:116] [37m[DEBUG][0m 21/171 - Route: 21[0m
+[Mar 15 Mar 2022 23:07:24 CET] [STDERR] [2022-03-15 23:07:24,702] [dequa_graph:utils.py:116] [37m[DEBUG][0m 22/171 - Route: 22[0m
+[Mar 15 Mar 2022 23:07:25 CET] [STDERR] [2022-03-15 23:07:25,023] [dequa_graph:utils.py:116] [37m[DEBUG][0m 23/171 - Route: 23[0m
+[Mar 15 Mar 2022 23:07:25 CET] [STDERR] [2022-03-15 23:07:25,318] [dequa_graph:utils.py:116] [37m[DEBUG][0m 24/171 - Route: 24[0m
+[Mar 15 Mar 2022 23:07:25 CET] [STDERR] [2022-03-15 23:07:25,751] [dequa_graph:utils.py:116] [37m[DEBUG][0m 25/171 - Route: 25[0m
+[Mar 15 Mar 2022 23:07:26 CET] [STDERR] [2022-03-15 23:07:26,173] [dequa_graph:utils.py:116] [37m[DEBUG][0m 26/171 - Route: 26[0m
+[Mar 15 Mar 2022 23:07:26 CET] [STDERR] [2022-03-15 23:07:26,527] [dequa_graph:utils.py:116] [37m[DEBUG][0m 27/171 - Route: 27[0m
+[Mar 15 Mar 2022 23:07:26 CET] [STDERR] [2022-03-15 23:07:26,891] [dequa_graph:utils.py:116] [37m[DEBUG][0m 28/171 - Route: 28[0m
+[Mar 15 Mar 2022 23:07:27 CET] [STDERR] [2022-03-15 23:07:27,250] [dequa_graph:utils.py:116] [37m[DEBUG][0m 29/171 - Route: 29[0m
+[Mar 15 Mar 2022 23:07:27 CET] [STDERR] [2022-03-15 23:07:27,511] [dequa_graph:utils.py:116] [37m[DEBUG][0m 30/171 - Route: 30[0m
+[Mar 15 Mar 2022 23:07:27 CET] [STDERR] [2022-03-15 23:07:27,913] [dequa_graph:utils.py:116] [37m[DEBUG][0m 31/171 - Route: 31[0m
+[Mar 15 Mar 2022 23:07:28 CET] [STDERR] [2022-03-15 23:07:28,189] [dequa_graph:utils.py:116] [37m[DEBUG][0m 32/171 - Route: 32[0m
+[Mar 15 Mar 2022 23:07:28 CET] [STDERR] [2022-03-15 23:07:28,317] [dequa_graph:utils.py:116] [37m[DEBUG][0m 33/171 - Route: 33[0m
+[Mar 15 Mar 2022 23:07:28 CET] [STDERR] [2022-03-15 23:07:28,653] [dequa_graph:utils.py:116] [37m[DEBUG][0m 34/171 - Route: 34[0m
+[Mar 15 Mar 2022 23:07:28 CET] [STDERR] [2022-03-15 23:07:28,972] [dequa_graph:utils.py:116] [37m[DEBUG][0m 35/171 - Route: 35[0m
+[Mar 15 Mar 2022 23:07:29 CET] [STDERR] [2022-03-15 23:07:29,279] [dequa_graph:utils.py:116] [37m[DEBUG][0m 36/171 - Route: 36[0m
+[Mar 15 Mar 2022 23:07:29 CET] [STDERR] [2022-03-15 23:07:29,495] [dequa_graph:utils.py:116] [37m[DEBUG][0m 37/171 - Route: 37[0m
+[Mar 15 Mar 2022 23:07:29 CET] [STDERR] [2022-03-15 23:07:29,691] [dequa_graph:utils.py:116] [37m[DEBUG][0m 38/171 - Route: 38[0m
+[Mar 15 Mar 2022 23:07:29 CET] [STDERR] [2022-03-15 23:07:29,846] [dequa_graph:utils.py:116] [37m[DEBUG][0m 39/171 - Route: 39[0m
+[Mar 15 Mar 2022 23:07:29 CET] [STDERR] [2022-03-15 23:07:29,979] [dequa_graph:utils.py:116] [37m[DEBUG][0m 40/171 - Route: 40[0m
+[Mar 15 Mar 2022 23:07:30 CET] [STDERR] [2022-03-15 23:07:30,121] [dequa_graph:utils.py:116] [37m[DEBUG][0m 41/171 - Route: 41[0m
+[Mar 15 Mar 2022 23:07:30 CET] [STDERR] [2022-03-15 23:07:30,245] [dequa_graph:utils.py:116] [37m[DEBUG][0m 42/171 - Route: 42[0m
+[Mar 15 Mar 2022 23:07:30 CET] [STDERR] [2022-03-15 23:07:30,367] [dequa_graph:utils.py:116] [37m[DEBUG][0m 43/171 - Route: 43[0m
+[Mar 15 Mar 2022 23:07:30 CET] [STDERR] [2022-03-15 23:07:30,530] [dequa_graph:utils.py:116] [37m[DEBUG][0m 44/171 - Route: 44[0m
+[Mar 15 Mar 2022 23:07:30 CET] [STDERR] [2022-03-15 23:07:30,707] [dequa_graph:utils.py:116] [37m[DEBUG][0m 45/171 - Route: 45[0m
+[Mar 15 Mar 2022 23:07:30 CET] [STDERR] [2022-03-15 23:07:30,864] [dequa_graph:utils.py:116] [37m[DEBUG][0m 46/171 - Route: 46[0m
+[Mar 15 Mar 2022 23:07:31 CET] [STDERR] [2022-03-15 23:07:31,033] [dequa_graph:utils.py:116] [37m[DEBUG][0m 47/171 - Route: 47[0m
+[Mar 15 Mar 2022 23:07:31 CET] [STDERR] [2022-03-15 23:07:31,232] [dequa_graph:utils.py:116] [37m[DEBUG][0m 48/171 - Route: 48[0m
+[Mar 15 Mar 2022 23:07:31 CET] [STDERR] [2022-03-15 23:07:31,410] [dequa_graph:utils.py:116] [37m[DEBUG][0m 49/171 - Route: 49[0m
+[Mar 15 Mar 2022 23:07:31 CET] [STDERR] [2022-03-15 23:07:31,717] [dequa_graph:utils.py:116] [37m[DEBUG][0m 50/171 - Route: 50[0m
+[Mar 15 Mar 2022 23:07:31 CET] [STDERR] [2022-03-15 23:07:31,934] [dequa_graph:utils.py:116] [37m[DEBUG][0m 51/171 - Route: 51[0m
+[Mar 15 Mar 2022 23:07:32 CET] [STDERR] [2022-03-15 23:07:32,106] [dequa_graph:utils.py:116] [37m[DEBUG][0m 52/171 - Route: 52[0m
+[Mar 15 Mar 2022 23:07:32 CET] [STDERR] [2022-03-15 23:07:32,277] [dequa_graph:utils.py:116] [37m[DEBUG][0m 53/171 - Route: 53[0m
+[Mar 15 Mar 2022 23:07:33 CET] [STDERR] [2022-03-15 23:07:33,885] [dequa_graph:utils.py:116] [37m[DEBUG][0m 54/171 - Route: 54[0m
+[Mar 15 Mar 2022 23:07:35 CET] [STDERR] [2022-03-15 23:07:35,263] [dequa_graph:utils.py:116] [37m[DEBUG][0m 55/171 - Route: 55[0m
+[Mar 15 Mar 2022 23:07:36 CET] [STDERR] [2022-03-15 23:07:36,064] [dequa_graph:utils.py:116] [37m[DEBUG][0m 56/171 - Route: 56[0m
+[Mar 15 Mar 2022 23:07:37 CET] [STDERR] [2022-03-15 23:07:37,281] [dequa_graph:utils.py:116] [37m[DEBUG][0m 57/171 - Route: 57[0m
+[Mar 15 Mar 2022 23:07:37 CET] [STDERR] [2022-03-15 23:07:37,799] [dequa_graph:utils.py:116] [37m[DEBUG][0m 58/171 - Route: 58[0m
+[Mar 15 Mar 2022 23:07:38 CET] [STDERR] [2022-03-15 23:07:38,223] [dequa_graph:utils.py:116] [37m[DEBUG][0m 59/171 - Route: 59[0m
+[Mar 15 Mar 2022 23:07:38 CET] [STDERR] [2022-03-15 23:07:38,561] [dequa_graph:utils.py:116] [37m[DEBUG][0m 60/171 - Route: 60[0m
+[Mar 15 Mar 2022 23:07:39 CET] [STDERR] [2022-03-15 23:07:39,404] [dequa_graph:utils.py:116] [37m[DEBUG][0m 61/171 - Route: 61[0m
+[Mar 15 Mar 2022 23:07:39 CET] [STDERR] [2022-03-15 23:07:39,861] [dequa_graph:utils.py:116] [37m[DEBUG][0m 62/171 - Route: 62[0m
+[Mar 15 Mar 2022 23:07:40 CET] [STDERR] [2022-03-15 23:07:40,320] [dequa_graph:utils.py:116] [37m[DEBUG][0m 63/171 - Route: 63[0m
+[Mar 15 Mar 2022 23:07:40 CET] [STDERR] [2022-03-15 23:07:40,725] [dequa_graph:utils.py:116] [37m[DEBUG][0m 64/171 - Route: 64[0m
+[Mar 15 Mar 2022 23:07:41 CET] [STDERR] [2022-03-15 23:07:41,131] [dequa_graph:utils.py:116] [37m[DEBUG][0m 65/171 - Route: 65[0m
+[Mar 15 Mar 2022 23:07:41 CET] [STDERR] [2022-03-15 23:07:41,498] [dequa_graph:utils.py:116] [37m[DEBUG][0m 66/171 - Route: 66[0m
+[Mar 15 Mar 2022 23:07:41 CET] [STDERR] [2022-03-15 23:07:41,869] [dequa_graph:utils.py:116] [37m[DEBUG][0m 67/171 - Route: 67[0m
+[Mar 15 Mar 2022 23:07:43 CET] [STDERR] [2022-03-15 23:07:43,620] [dequa_graph:utils.py:116] [37m[DEBUG][0m 68/171 - Route: 68[0m
+[Mar 15 Mar 2022 23:07:45 CET] [STDERR] [2022-03-15 23:07:45,401] [dequa_graph:utils.py:116] [37m[DEBUG][0m 69/171 - Route: 69[0m
+[Mar 15 Mar 2022 23:07:46 CET] [STDERR] [2022-03-15 23:07:46,710] [dequa_graph:utils.py:116] [37m[DEBUG][0m 70/171 - Route: 70[0m
+[Mar 15 Mar 2022 23:07:47 CET] [STDERR] [2022-03-15 23:07:47,431] [dequa_graph:utils.py:116] [37m[DEBUG][0m 71/171 - Route: 71[0m
+[Mar 15 Mar 2022 23:07:47 CET] [STDERR] [2022-03-15 23:07:47,834] [dequa_graph:utils.py:116] [37m[DEBUG][0m 72/171 - Route: 72[0m
+[Mar 15 Mar 2022 23:07:48 CET] [STDERR] [2022-03-15 23:07:48,857] [dequa_graph:utils.py:116] [37m[DEBUG][0m 73/171 - Route: 73[0m
+[Mar 15 Mar 2022 23:07:50 CET] [STDERR] [2022-03-15 23:07:50,231] [dequa_graph:utils.py:116] [37m[DEBUG][0m 74/171 - Route: 74[0m
+[Mar 15 Mar 2022 23:07:51 CET] [STDERR] [2022-03-15 23:07:51,354] [dequa_graph:utils.py:116] [37m[DEBUG][0m 75/171 - Route: 75[0m
+[Mar 15 Mar 2022 23:07:52 CET] [STDERR] [2022-03-15 23:07:52,341] [dequa_graph:utils.py:116] [37m[DEBUG][0m 76/171 - Route: 76[0m
+[Mar 15 Mar 2022 23:07:53 CET] [STDERR] [2022-03-15 23:07:53,270] [dequa_graph:utils.py:116] [37m[DEBUG][0m 77/171 - Route: 77[0m
+[Mar 15 Mar 2022 23:07:53 CET] [STDERR] [2022-03-15 23:07:53,937] [dequa_graph:utils.py:116] [37m[DEBUG][0m 78/171 - Route: 78[0m
+[Mar 15 Mar 2022 23:07:54 CET] [STDERR] [2022-03-15 23:07:54,632] [dequa_graph:utils.py:116] [37m[DEBUG][0m 79/171 - Route: 79[0m
+[Mar 15 Mar 2022 23:07:55 CET] [STDERR] [2022-03-15 23:07:55,346] [dequa_graph:utils.py:116] [37m[DEBUG][0m 80/171 - Route: 80[0m
+[Mar 15 Mar 2022 23:07:55 CET] [STDERR] [2022-03-15 23:07:55,772] [dequa_graph:utils.py:116] [37m[DEBUG][0m 81/171 - Route: 81[0m
+[Mar 15 Mar 2022 23:07:56 CET] [STDERR] [2022-03-15 23:07:56,183] [dequa_graph:utils.py:116] [37m[DEBUG][0m 82/171 - Route: 82[0m
+[Mar 15 Mar 2022 23:07:56 CET] [STDERR] [2022-03-15 23:07:56,569] [dequa_graph:utils.py:116] [37m[DEBUG][0m 83/171 - Route: 83[0m
+[Mar 15 Mar 2022 23:07:57 CET] [STDERR] [2022-03-15 23:07:57,454] [dequa_graph:utils.py:116] [37m[DEBUG][0m 84/171 - Route: 84[0m
+[Mar 15 Mar 2022 23:07:58 CET] [STDERR] [2022-03-15 23:07:58,369] [dequa_graph:utils.py:116] [37m[DEBUG][0m 85/171 - Route: 85[0m
+[Mar 15 Mar 2022 23:07:59 CET] [STDERR] [2022-03-15 23:07:59,361] [dequa_graph:utils.py:116] [37m[DEBUG][0m 86/171 - Route: 86[0m
+[Mar 15 Mar 2022 23:08:00 CET] [STDERR] [2022-03-15 23:08:00,100] [dequa_graph:utils.py:116] [37m[DEBUG][0m 87/171 - Route: 87[0m
+[Mar 15 Mar 2022 23:08:00 CET] [STDERR] [2022-03-15 23:08:00,826] [dequa_graph:utils.py:116] [37m[DEBUG][0m 88/171 - Route: 88[0m
+[Mar 15 Mar 2022 23:08:01 CET] [STDERR] [2022-03-15 23:08:01,608] [dequa_graph:utils.py:116] [37m[DEBUG][0m 89/171 - Route: 89[0m
+[Mar 15 Mar 2022 23:08:02 CET] [STDERR] [2022-03-15 23:08:02,128] [dequa_graph:utils.py:116] [37m[DEBUG][0m 90/171 - Route: 90[0m
+[Mar 15 Mar 2022 23:08:02 CET] [STDERR] [2022-03-15 23:08:02,709] [dequa_graph:utils.py:116] [37m[DEBUG][0m 91/171 - Route: 91[0m
+[Mar 15 Mar 2022 23:08:03 CET] [STDERR] [2022-03-15 23:08:03,142] [dequa_graph:utils.py:116] [37m[DEBUG][0m 92/171 - Route: 92[0m
+[Mar 15 Mar 2022 23:08:03 CET] [STDERR] [2022-03-15 23:08:03,551] [dequa_graph:utils.py:116] [37m[DEBUG][0m 93/171 - Route: 93[0m
+[Mar 15 Mar 2022 23:08:03 CET] [STDERR] [2022-03-15 23:08:03,969] [dequa_graph:utils.py:116] [37m[DEBUG][0m 94/171 - Route: 94[0m
+[Mar 15 Mar 2022 23:08:04 CET] [STDERR] [2022-03-15 23:08:04,464] [dequa_graph:utils.py:116] [37m[DEBUG][0m 95/171 - Route: 95[0m
+[Mar 15 Mar 2022 23:08:04 CET] [STDERR] [2022-03-15 23:08:04,965] [dequa_graph:utils.py:116] [37m[DEBUG][0m 96/171 - Route: 96[0m
+[Mar 15 Mar 2022 23:08:05 CET] [STDERR] [2022-03-15 23:08:05,190] [dequa_graph:utils.py:116] [37m[DEBUG][0m 97/171 - Route: 97[0m
+[Mar 15 Mar 2022 23:08:06 CET] [STDERR] [2022-03-15 23:08:06,436] [dequa_graph:utils.py:116] [37m[DEBUG][0m 98/171 - Route: 98[0m
+[Mar 15 Mar 2022 23:08:07 CET] [STDERR] [2022-03-15 23:08:07,373] [dequa_graph:utils.py:116] [37m[DEBUG][0m 99/171 - Route: 99[0m
+[Mar 15 Mar 2022 23:08:08 CET] [STDERR] [2022-03-15 23:08:08,229] [dequa_graph:utils.py:116] [37m[DEBUG][0m 100/171 - Route: 100[0m
+[Mar 15 Mar 2022 23:08:08 CET] [STDERR] [2022-03-15 23:08:08,715] [dequa_graph:utils.py:116] [37m[DEBUG][0m 101/171 - Route: 101[0m
+[Mar 15 Mar 2022 23:08:09 CET] [STDERR] [2022-03-15 23:08:09,010] [dequa_graph:utils.py:116] [37m[DEBUG][0m 102/171 - Route: 102[0m
+[Mar 15 Mar 2022 23:08:10 CET] [STDERR] [2022-03-15 23:08:10,265] [dequa_graph:utils.py:116] [37m[DEBUG][0m 103/171 - Route: 103[0m
+[Mar 15 Mar 2022 23:08:10 CET] [STDERR] [2022-03-15 23:08:10,457] [dequa_graph:utils.py:116] [37m[DEBUG][0m 104/171 - Route: 104[0m
+[Mar 15 Mar 2022 23:08:10 CET] [STDERR] [2022-03-15 23:08:10,661] [dequa_graph:utils.py:116] [37m[DEBUG][0m 105/171 - Route: 105[0m
+[Mar 15 Mar 2022 23:08:10 CET] [STDERR] [2022-03-15 23:08:10,834] [dequa_graph:utils.py:116] [37m[DEBUG][0m 106/171 - Route: 106[0m
+[Mar 15 Mar 2022 23:08:12 CET] [STDERR] [2022-03-15 23:08:12,074] [dequa_graph:utils.py:116] [37m[DEBUG][0m 107/171 - Route: 107[0m
+[Mar 15 Mar 2022 23:08:13 CET] [STDERR] [2022-03-15 23:08:13,028] [dequa_graph:utils.py:116] [37m[DEBUG][0m 108/171 - Route: 108[0m
+[Mar 15 Mar 2022 23:08:14 CET] [STDERR] [2022-03-15 23:08:14,405] [dequa_graph:utils.py:116] [37m[DEBUG][0m 109/171 - Route: 109[0m
+[Mar 15 Mar 2022 23:08:15 CET] [STDERR] [2022-03-15 23:08:15,220] [dequa_graph:utils.py:116] [37m[DEBUG][0m 110/171 - Route: 110[0m
+[Mar 15 Mar 2022 23:08:15 CET] [STDERR] [2022-03-15 23:08:15,719] [dequa_graph:utils.py:116] [37m[DEBUG][0m 111/171 - Route: 111[0m
+[Mar 15 Mar 2022 23:08:15 CET] [STDERR] [2022-03-15 23:08:15,966] [dequa_graph:utils.py:116] [37m[DEBUG][0m 112/171 - Route: 112[0m
+[Mar 15 Mar 2022 23:08:16 CET] [STDERR] [2022-03-15 23:08:16,127] [dequa_graph:utils.py:116] [37m[DEBUG][0m 113/171 - Route: 113[0m
+[Mar 15 Mar 2022 23:08:16 CET] [STDERR] [2022-03-15 23:08:16,559] [dequa_graph:utils.py:116] [37m[DEBUG][0m 114/171 - Route: 114[0m
+[Mar 15 Mar 2022 23:08:17 CET] [STDERR] [2022-03-15 23:08:17,008] [dequa_graph:utils.py:116] [37m[DEBUG][0m 115/171 - Route: 115[0m
+[Mar 15 Mar 2022 23:08:17 CET] [STDERR] [2022-03-15 23:08:17,347] [dequa_graph:utils.py:116] [37m[DEBUG][0m 116/171 - Route: 116[0m
+[Mar 15 Mar 2022 23:08:17 CET] [STDERR] [2022-03-15 23:08:17,631] [dequa_graph:utils.py:116] [37m[DEBUG][0m 117/171 - Route: 117[0m
+[Mar 15 Mar 2022 23:08:17 CET] [STDERR] [2022-03-15 23:08:17,862] [dequa_graph:utils.py:116] [37m[DEBUG][0m 118/171 - Route: 118[0m
+[Mar 15 Mar 2022 23:08:18 CET] [STDERR] [2022-03-15 23:08:18,034] [dequa_graph:utils.py:116] [37m[DEBUG][0m 119/171 - Route: 119[0m
+[Mar 15 Mar 2022 23:08:18 CET] [STDERR] [2022-03-15 23:08:18,434] [dequa_graph:utils.py:116] [37m[DEBUG][0m 120/171 - Route: 120[0m
+[Mar 15 Mar 2022 23:08:18 CET] [STDERR] [2022-03-15 23:08:18,885] [dequa_graph:utils.py:116] [37m[DEBUG][0m 121/171 - Route: 121[0m
+[Mar 15 Mar 2022 23:08:19 CET] [STDERR] [2022-03-15 23:08:19,342] [dequa_graph:utils.py:116] [37m[DEBUG][0m 122/171 - Route: 122[0m
+[Mar 15 Mar 2022 23:08:19 CET] [STDERR] [2022-03-15 23:08:19,720] [dequa_graph:utils.py:116] [37m[DEBUG][0m 123/171 - Route: 123[0m
+[Mar 15 Mar 2022 23:08:20 CET] [STDERR] [2022-03-15 23:08:20,048] [dequa_graph:utils.py:116] [37m[DEBUG][0m 124/171 - Route: 124[0m
+[Mar 15 Mar 2022 23:08:20 CET] [STDERR] [2022-03-15 23:08:20,303] [dequa_graph:utils.py:116] [37m[DEBUG][0m 125/171 - Route: 125[0m
+[Mar 15 Mar 2022 23:08:20 CET] [STDERR] [2022-03-15 23:08:20,515] [dequa_graph:utils.py:116] [37m[DEBUG][0m 126/171 - Route: 126[0m
+[Mar 15 Mar 2022 23:08:20 CET] [STDERR] [2022-03-15 23:08:20,688] [dequa_graph:utils.py:116] [37m[DEBUG][0m 127/171 - Route: 127[0m
+[Mar 15 Mar 2022 23:08:21 CET] [STDERR] [2022-03-15 23:08:21,210] [dequa_graph:utils.py:116] [37m[DEBUG][0m 128/171 - Route: 128[0m
+[Mar 15 Mar 2022 23:08:21 CET] [STDERR] [2022-03-15 23:08:21,706] [dequa_graph:utils.py:116] [37m[DEBUG][0m 129/171 - Route: 129[0m
+[Mar 15 Mar 2022 23:08:21 CET] [STDERR] [2022-03-15 23:08:21,877] [dequa_graph:utils.py:116] [37m[DEBUG][0m 130/171 - Route: 130[0m
+[Mar 15 Mar 2022 23:08:22 CET] [STDERR] [2022-03-15 23:08:22,057] [dequa_graph:utils.py:116] [37m[DEBUG][0m 131/171 - Route: 131[0m
+[Mar 15 Mar 2022 23:08:22 CET] [STDERR] [2022-03-15 23:08:22,373] [dequa_graph:utils.py:116] [37m[DEBUG][0m 132/171 - Route: 132[0m
+[Mar 15 Mar 2022 23:08:22 CET] [STDERR] [2022-03-15 23:08:22,638] [dequa_graph:utils.py:116] [37m[DEBUG][0m 133/171 - Route: 133[0m
+[Mar 15 Mar 2022 23:08:22 CET] [STDERR] [2022-03-15 23:08:22,901] [dequa_graph:utils.py:116] [37m[DEBUG][0m 134/171 - Route: 134[0m
+[Mar 15 Mar 2022 23:08:23 CET] [STDERR] [2022-03-15 23:08:23,122] [dequa_graph:utils.py:116] [37m[DEBUG][0m 135/171 - Route: 135[0m
+[Mar 15 Mar 2022 23:08:23 CET] [STDERR] [2022-03-15 23:08:23,362] [dequa_graph:utils.py:116] [37m[DEBUG][0m 136/171 - Route: 136[0m
+[Mar 15 Mar 2022 23:08:23 CET] [STDERR] [2022-03-15 23:08:23,635] [dequa_graph:utils.py:116] [37m[DEBUG][0m 137/171 - Route: 137[0m
+[Mar 15 Mar 2022 23:08:23 CET] [STDERR] [2022-03-15 23:08:23,847] [dequa_graph:utils.py:116] [37m[DEBUG][0m 138/171 - Route: 138[0m
+[Mar 15 Mar 2022 23:08:24 CET] [STDERR] [2022-03-15 23:08:24,048] [dequa_graph:utils.py:116] [37m[DEBUG][0m 139/171 - Route: 139[0m
+[Mar 15 Mar 2022 23:08:24 CET] [STDERR] [2022-03-15 23:08:24,313] [dequa_graph:utils.py:116] [37m[DEBUG][0m 140/171 - Route: 140[0m
+[Mar 15 Mar 2022 23:08:24 CET] [STDERR] [2022-03-15 23:08:24,565] [dequa_graph:utils.py:116] [37m[DEBUG][0m 141/171 - Route: 141[0m
+[Mar 15 Mar 2022 23:08:25 CET] [STDERR] [2022-03-15 23:08:25,210] [dequa_graph:utils.py:116] [37m[DEBUG][0m 142/171 - Route: 142[0m
+[Mar 15 Mar 2022 23:08:25 CET] [STDERR] [2022-03-15 23:08:25,723] [dequa_graph:utils.py:116] [37m[DEBUG][0m 143/171 - Route: 143[0m
+[Mar 15 Mar 2022 23:08:25 CET] [STDERR] [2022-03-15 23:08:25,901] [dequa_graph:utils.py:116] [37m[DEBUG][0m 144/171 - Route: 144[0m
+[Mar 15 Mar 2022 23:08:26 CET] [STDERR] [2022-03-15 23:08:26,508] [dequa_graph:utils.py:116] [37m[DEBUG][0m 145/171 - Route: 145[0m
+[Mar 15 Mar 2022 23:08:27 CET] [STDERR] [2022-03-15 23:08:27,000] [dequa_graph:utils.py:116] [37m[DEBUG][0m 146/171 - Route: 146[0m
+[Mar 15 Mar 2022 23:08:27 CET] [STDERR] [2022-03-15 23:08:27,430] [dequa_graph:utils.py:116] [37m[DEBUG][0m 147/171 - Route: 147[0m
+[Mar 15 Mar 2022 23:08:27 CET] [STDERR] [2022-03-15 23:08:27,568] [dequa_graph:utils.py:116] [37m[DEBUG][0m 148/171 - Route: 148[0m
+[Mar 15 Mar 2022 23:08:27 CET] [STDERR] [2022-03-15 23:08:27,978] [dequa_graph:utils.py:116] [37m[DEBUG][0m 149/171 - Route: 149[0m
+[Mar 15 Mar 2022 23:08:28 CET] [STDERR] [2022-03-15 23:08:28,421] [dequa_graph:utils.py:116] [37m[DEBUG][0m 150/171 - Route: 150[0m
+[Mar 15 Mar 2022 23:08:28 CET] [STDERR] [2022-03-15 23:08:28,839] [dequa_graph:utils.py:116] [37m[DEBUG][0m 151/171 - Route: 151[0m
+[Mar 15 Mar 2022 23:08:29 CET] [STDERR] [2022-03-15 23:08:29,031] [dequa_graph:utils.py:116] [37m[DEBUG][0m 152/171 - Route: 152[0m
+[Mar 15 Mar 2022 23:08:29 CET] [STDERR] [2022-03-15 23:08:29,214] [dequa_graph:utils.py:116] [37m[DEBUG][0m 153/171 - Route: 153[0m
+[Mar 15 Mar 2022 23:08:29 CET] [STDERR] [2022-03-15 23:08:29,334] [dequa_graph:utils.py:116] [37m[DEBUG][0m 154/171 - Route: 154[0m
+[Mar 15 Mar 2022 23:08:29 CET] [STDERR] [2022-03-15 23:08:29,458] [dequa_graph:utils.py:116] [37m[DEBUG][0m 155/171 - Route: 155[0m
+[Mar 15 Mar 2022 23:08:29 CET] [STDERR] [2022-03-15 23:08:29,536] [dequa_graph:utils.py:125] [33m[WARNING][0m Missing stop 5049 in route 155[0m
+[Mar 15 Mar 2022 23:08:29 CET] [STDERR] [2022-03-15 23:08:29,536] [dequa_graph:utils.py:125] [33m[WARNING][0m Missing stop 5778 in route 155[0m
+[Mar 15 Mar 2022 23:08:29 CET] [STDERR] [2022-03-15 23:08:29,536] [dequa_graph:utils.py:116] [37m[DEBUG][0m 156/171 - Route: 156[0m
+[Mar 15 Mar 2022 23:08:29 CET] [STDERR] [2022-03-15 23:08:29,801] [dequa_graph:utils.py:116] [37m[DEBUG][0m 157/171 - Route: 157[0m
+[Mar 15 Mar 2022 23:08:30 CET] [STDERR] [2022-03-15 23:08:30,131] [dequa_graph:utils.py:116] [37m[DEBUG][0m 158/171 - Route: 158[0m
+[Mar 15 Mar 2022 23:08:30 CET] [STDERR] [2022-03-15 23:08:30,410] [dequa_graph:utils.py:116] [37m[DEBUG][0m 159/171 - Route: 159[0m
+[Mar 15 Mar 2022 23:08:30 CET] [STDERR] [2022-03-15 23:08:30,782] [dequa_graph:utils.py:116] [37m[DEBUG][0m 160/171 - Route: 160[0m
+[Mar 15 Mar 2022 23:08:31 CET] [STDERR] [2022-03-15 23:08:31,246] [dequa_graph:utils.py:116] [37m[DEBUG][0m 161/171 - Route: 161[0m
+[Mar 15 Mar 2022 23:08:31 CET] [STDERR] [2022-03-15 23:08:31,650] [dequa_graph:utils.py:116] [37m[DEBUG][0m 162/171 - Route: 162[0m
+[Mar 15 Mar 2022 23:08:31 CET] [STDERR] [2022-03-15 23:08:31,951] [dequa_graph:utils.py:116] [37m[DEBUG][0m 163/171 - Route: 163[0m
+[Mar 15 Mar 2022 23:08:32 CET] [STDERR] [2022-03-15 23:08:32,250] [dequa_graph:utils.py:116] [37m[DEBUG][0m 164/171 - Route: 164[0m
+[Mar 15 Mar 2022 23:08:32 CET] [STDERR] [2022-03-15 23:08:32,662] [dequa_graph:utils.py:116] [37m[DEBUG][0m 165/171 - Route: 165[0m
+[Mar 15 Mar 2022 23:08:33 CET] [STDERR] [2022-03-15 23:08:33,024] [dequa_graph:utils.py:116] [37m[DEBUG][0m 166/171 - Route: 166[0m
+[Mar 15 Mar 2022 23:08:33 CET] [STDERR] [2022-03-15 23:08:33,395] [dequa_graph:utils.py:116] [37m[DEBUG][0m 167/171 - Route: 167[0m
+[Mar 15 Mar 2022 23:08:33 CET] [STDERR] [2022-03-15 23:08:33,762] [dequa_graph:utils.py:116] [37m[DEBUG][0m 168/171 - Route: 168[0m
+[Mar 15 Mar 2022 23:08:34 CET] [STDERR] [2022-03-15 23:08:34,060] [dequa_graph:utils.py:116] [37m[DEBUG][0m 169/171 - Route: 169[0m
+[Mar 15 Mar 2022 23:08:34 CET] [STDERR] [2022-03-15 23:08:34,387] [dequa_graph:utils.py:116] [37m[DEBUG][0m 170/171 - Route: 170[0m
+[Mar 15 Mar 2022 23:08:34 CET] [STDERR] [2022-03-15 23:08:34,608] [dequa_graph:utils.py:116] [37m[DEBUG][0m 171/171 - Route: 171[0m
+[Mar 15 Mar 2022 23:06:41 CET] [INFO]  < updating_dequa SCRIPTEXIT
