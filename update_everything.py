@@ -53,7 +53,7 @@ def main(logger):
 
         # update the graphs
         logger.debug("Loading the graphs...")
-        graph_street, graph_water = load_graphs(graph_street_path, graph_water_path)
+        graph_street, graph_water = load_graphs(str(graph_street_path), str(graph_water_path))
         logger.debug("Adding waterbus to the graph...")
         graph_street_only, graph_street_street_plus_waterbus = add_waterbus_to_street(graph_street, path_zip_files_actv)
 
