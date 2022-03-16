@@ -136,3 +136,4 @@ files_names.yaml
 *.gt
 *.zip
 files/
+logs/
