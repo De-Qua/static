@@ -26,11 +26,14 @@ def main(logger):
     file_folder = Path(yaml_dict_old["file_folder"])
     # tide
     tide_folder = file_folder / yaml_dict_old["tide_folder"]
+    tide_folder.mkdir(parents=True, exist_ok=True)
     # gtfs
     gtfs_folder = file_folder / yaml_dict_old["gtfs_folder"]
+    gtfs_folder.mkdir(parents=True, exist_ok=True)
     # path_zip_gtfs_actv = file_folder / yaml_dict_old["gtfs_folder"] / yaml_dict_old["gtfs_file"]
     # graphs
     graph_folder = file_folder / yaml_dict_old["graph_folder"]
+    graph_folder.mkdir(parents=True, exist_ok=True)
     graph_street_path = graph_folder / yaml_dict_old['graph_street_file']
     graph_water_path = graph_folder / yaml_dict_old['graph_water_file']
 
