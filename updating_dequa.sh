@@ -1,11 +1,11 @@
 #!/bin/bash
 
 source ./utils/logger.sh "logs/log.out" DEBUG
-source ~/miniconda3/etc/profile.d/conda.sh
+#source ~/miniconda3/etc/profile.d/conda.sh
 
 SCRIPTENTRY
-# DEBUG "Activate environment"
-# conda activate atom
+DEBUG "Activate environment"
+conda activate dequa
 INFO "Starting the python update"
 python3 update_everything.py
 SCRIPTEXIT
