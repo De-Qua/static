@@ -135,3 +135,4 @@ dmypy.json
 files_names.yaml
 *.gt
 *.zip
+files/
