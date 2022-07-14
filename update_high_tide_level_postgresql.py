@@ -9,8 +9,7 @@ import sqlalchemy as db
 from sqlalchemy.orm import Session
 import pytz
 
-# DATABASE_URL = "postgresql:///opendata_ve_pg"
-DATABASE_URL = "postgresql://dequa:vivalafiga@192.168.1.104:5432/opendata_ve_pg"
+DATABASE_URL = "postgresql:///opendata_ve_pg"
 
 URL_TIDE = 'https://dati.venezia.it/sites/default/files/dataset/opendata/livello.json'
 DT_TIDE_FORMAT = "%Y-%m-%d %H:%M:%S %z"
