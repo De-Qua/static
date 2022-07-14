@@ -77,8 +77,6 @@ def main():
     with Session(engine) as session:
         num_rows = session.query(tbl_tide).count()
         last_row = session.query(tbl_tide).order_by(tbl_tide.c.id.desc()).first()
-        import ipdb
-        ipdb.set_trace()
         if last_row.updated_at == tide["updated_at"]:
             print("already in db")
         else:
