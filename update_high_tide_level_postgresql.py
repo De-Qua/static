@@ -9,7 +9,8 @@ import sqlalchemy as db
 from sqlalchemy.orm import Session
 import pytz
 
-DATABASE_URL = "postgresql:///opendata_ve_pg"
+# DATABASE_URL = "postgresql:///opendata_ve_pg"
+DATABASE_URL = "postgresql://dequa:vivalafiga@192.168.1.104:5432/opendata_ve_pg"
 
 URL_TIDE = 'https://dati.venezia.it/sites/default/files/dataset/opendata/livello.json'
 DT_TIDE_FORMAT = "%Y-%m-%d %H:%M:%S %z"
@@ -53,7 +54,7 @@ def format_tide_data(data):
         "latDDN": float(data["latDDN"]),
         "lonDDE": float(data["lonDDE"]),
         # then we upload the time as basic utc
-        "updated_at": dt_with_tzinfo.astimezone(pytz.utc),
+        "updated_at": dt_with_tzinfo.astimezone(pytz.utc).replace(tzinfo=None),
         "value": float(data["valore"][:-1])
     }
 
@@ -62,7 +63,7 @@ def main():
     tide = get_tide_data()
     if not tide:
         return
-    tide["uploaded_at"] = dt.datetime.utcnow().replace(tzinfo=pytz.utc)
+    tide["uploaded_at"] = dt.datetime.utcnow().replace(tzinfo=None)
     # Set database
     engine = db.create_engine(DATABASE_URL)
     meta_data = db.MetaData(bind=engine)
@@ -76,12 +77,17 @@ def main():
     # commit the changes to the db
     with Session(engine) as session:
         num_rows = session.query(tbl_tide).count()
-        if num_rows >= 100:
-            last_row = session.query(tbl_tide).order_by(tbl_tide.c.id.desc()).first()
-            to_be_deleted = tbl_tide.delete().where(tbl_tide.c.id < last_row.id - MAX_NUM_ROWS)
-            session.execute(to_be_deleted)
-        session.execute(new_tide)
-        session.commit()
+        last_row = session.query(tbl_tide).order_by(tbl_tide.c.id.desc()).first()
+        import ipdb
+        ipdb.set_trace()
+        if last_row.updated_at == tide["updated_at"]:
+            print("already in db")
+        else:
+            if num_rows >= 100:
+                to_be_deleted = tbl_tide.delete().where(tbl_tide.c.id < last_row.id - MAX_NUM_ROWS)
+                session.execute(to_be_deleted)
+            session.execute(new_tide)
+            session.commit()
 
 
 if __name__ == "__main__":
