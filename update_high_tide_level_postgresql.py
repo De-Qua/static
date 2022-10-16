@@ -14,6 +14,8 @@ DATABASE_URL = "postgresql:///opendata_ve_pg"
 URL_TIDE = 'https://dati.venezia.it/sites/default/files/dataset/opendata/livello.json'
 DT_TIDE_FORMAT = "%Y-%m-%d %H:%M:%S %z"
 MAX_NUM_ROWS = 1 * 24 * 12  # num_days * 24 [hours in a day] * 12 [tide data in one hour]
+MAX_ATTEMPTS = 3
+INTER_ATTEMPT_TIME = 30 # seconds
 # Set the logger
 logger = logging.getLogger('high tide')
 logger.setLevel(logging.DEBUG)
@@ -59,33 +61,40 @@ def format_tide_data(data):
 
 
 def main():
-    tide = get_tide_data()
-    if not tide:
-        return
-    tide["uploaded_at"] = dt.datetime.utcnow().replace(tzinfo=None)
-    # Set database
-    engine = db.create_engine(DATABASE_URL)
-    meta_data = db.MetaData(bind=engine)
-    db.MetaData.reflect(meta_data)
+    counter_attempts = 0
+    while counter_attempts < MAX_ATTEMPTS:
+        # update the counter and sleep (except in the first case)
+        counter_attempts += 1
+        if counter_attempts > 0:
+            time.sleep(INTER_ATTEMPT_TIME)
 
-    # get the table "tide"
-    tbl_tide = db.Table('tide', meta_data, autoload=True)
-    # insert in the table
-    new_tide = tbl_tide.insert(tide)
+        tide = get_tide_data()
+        if not tide:
+            continue
+        tide["uploaded_at"] = dt.datetime.utcnow().replace(tzinfo=None)
+        # Set database
+        engine = db.create_engine(DATABASE_URL)
+        meta_data = db.MetaData(bind=engine)
+        db.MetaData.reflect(meta_data)
 
-    # commit the changes to the db
-    with Session(engine) as session:
-        num_rows = session.query(tbl_tide).count()
-        last_row = session.query(tbl_tide).order_by(tbl_tide.c.id.desc()).first()
-        if last_row.updated_at == tide["updated_at"]:
-            print("already in db")
-        else:
-            if num_rows >= 100:
-                to_be_deleted = tbl_tide.delete().where(tbl_tide.c.id < last_row.id - MAX_NUM_ROWS)
-                session.execute(to_be_deleted)
-            session.execute(new_tide)
-            session.commit()
+        # get the table "tide"
+        tbl_tide = db.Table('tide', meta_data, autoload=True)
+        # insert in the table
+        new_tide = tbl_tide.insert(tide)
 
+        # commit the changes to the db
+        with Session(engine) as session:
+            num_rows = session.query(tbl_tide).count()
+            last_row = session.query(tbl_tide).order_by(tbl_tide.c.id.desc()).first()
+            if last_row.updated_at == tide["updated_at"]:
+                continue
+            else:
+                if num_rows >= 100:
+                    to_be_deleted = tbl_tide.delete().where(tbl_tide.c.id < last_row.id - MAX_NUM_ROWS)
+                    session.execute(to_be_deleted)
+                session.execute(new_tide)
+                session.commit()
+                break
 
 if __name__ == "__main__":
     main()
