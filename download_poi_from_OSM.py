@@ -46,9 +46,12 @@ for filter_tag in filter_tags:
         print(f"Found {len(cur_tags_poi['elements'])} {tag}")
         lib_over.save_data_as(cur_tags_poi, target_path)
         total_poi += len(cur_tags_poi['elements'])
-
+        last_download_date = timenow
+    else:
+        last_download_date = when
+        
 download_info = {
-    'last_download':timenow.strftime('%Y-%d-%mT%H:%M:%SZ'),
+    'last_download':last_download_date.strftime('%Y-%d-%mT%H:%M:%SZ'),
     'downloaded_tags': downloaded_tags,
     'downloaded_poi': total_poi,
     'all_tags': filter_tags
