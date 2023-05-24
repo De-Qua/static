@@ -27,6 +27,7 @@ for filter_tag in filter_tags:
     tag = filter_tag[1:-1]
     target_path = os.path.join(output, f'{tag}.json')
     should_it_be_downloaded = False
+    timenow = datetime.now()
     if not os.path.exists(target_path):
         should_it_be_downloaded = True
     else:
@@ -34,7 +35,7 @@ for filter_tag in filter_tags:
         with open(target_path, 'r') as dpoi:
             downloaded = json.load(dpoi)
         when = datetime.strptime(downloaded['osm3s']['timestamp_osm_base'], '%Y-%d-%mT%H:%M:%SZ')
-        timenow = datetime.now()
+        # timenow = datetime.now()
         if (timenow - when).seconds > tolerance_secs:
             print(f"downloading again {filter_tag}, already downloaded, but too old")
             should_it_be_downloaded = True
@@ -49,7 +50,7 @@ for filter_tag in filter_tags:
         last_download_date = timenow
     else:
         last_download_date = when
-        
+
 download_info = {
     'last_download':last_download_date.strftime('%Y-%d-%mT%H:%M:%SZ'),
     'downloaded_tags': downloaded_tags,
