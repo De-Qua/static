@@ -25,6 +25,7 @@ filter_tags = ["'amenity'", "'building'", "'boundary'", "'craft'", "'emergency'"
 
 output_logs = os.path.join('files', 'poi', 'logs')
 os.makedirs(output_logs, exist_ok=True)
+timenow = datetime.now()
 info_path = os.path.join(output_logs, f'log_{timenow.strftime("%Y-%d-%m")}.json')
 reason_file_path = os.path.join(output_logs, f'log_{timenow.strftime("%Y-%d-%m")}.txt')
 for filter_tag in filter_tags:
@@ -32,7 +33,6 @@ for filter_tag in filter_tags:
     tag = filter_tag[1:-1]
     target_path = os.path.join(output, f'{tag}.json')
     should_it_be_downloaded = False
-    timenow = datetime.now()
     if not os.path.exists(target_path):
         should_it_be_downloaded = True
     else:
