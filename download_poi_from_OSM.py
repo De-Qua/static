@@ -22,6 +22,11 @@ filter_tags = ["'amenity'", "'building'", "'boundary'", "'craft'", "'emergency'"
                "'office'", "'place'", "'power'", "'public_transport'", "'railway'", \
                "'route'", "'shop'", "'tourism'", "'water'", "'waterway'", "'addr:housenumber'", \
                "'addr:street'" ]
+
+output_logs = os.path.join('files', 'poi', 'logs')
+os.makedirs(output_logs, exist_ok=True)
+info_path = os.path.join(output_logs, f'log_{timenow.strftime("%Y-%d-%m")}.json')
+reason_file_path = os.path.join(output_logs, f'log_{timenow.strftime("%Y-%d-%m")}.txt')
 for filter_tag in filter_tags:
     #pdb.set_trace()
     tag = filter_tag[1:-1]
@@ -36,10 +41,17 @@ for filter_tag in filter_tags:
             downloaded = json.load(dpoi)
         when = datetime.strptime(downloaded['osm3s']['timestamp_osm_base'], '%Y-%d-%mT%H:%M:%SZ')
         # timenow = datetime.now()
-        if (timenow - when).seconds > tolerance_secs:
+        period_from_last_time = (timenow - when)
+        seconds_from_last_time = period_from_last_time.seconds
+        if seconds_from_last_time > tolerance_secs:
+            with open(reason_file_path, 'w') as f:
+                f.write(f"downloading again {filter_tag}, already downloaded on {when}, but too old")
             print(f"downloading again {filter_tag}, already downloaded, but too old")
             should_it_be_downloaded = True
         else:
+            with open(reason_file_path, 'w') as f:
+                f.write(f"skipping {filter_tag}, already downloaded and quite recent")
+                f.write(f"period from last time {period_from_last_time}\nIn seconds: {seconds_from_last_time}")
             print(f"skipping {filter_tag}, already downloaded and quite recent")
     if should_it_be_downloaded:
         cur_tags_poi = lib_over.download_data(osm_id_venezia, [filter_tag], what='all')
@@ -57,9 +69,8 @@ download_info = {
     'downloaded_poi': total_poi,
     'all_tags': filter_tags
 }
-output_logs = os.path.join('files', 'poi', 'logs')
-os.makedirs(output_logs, exist_ok=True)
-info_path = os.path.join(output_logs, f'log_{timenow.strftime("%Y-%d-%m")}.json')
+
+
 with open(info_path, 'a') as log_json:
     json.dump(download_info, log_json, indent=2)
 print(f"Finished downloading {total_poi} POIs")
