@@ -12,7 +12,7 @@ output = os.path.join('files', 'poi')
 os.makedirs(output, exist_ok=True)
 
 # when to download again
-tolerance_secs = 60 * 60 * 24 * 7 # 1 week
+tolerance_days = 7 # 1 week
 
 total_poi = 0
 downloaded_tags = []
@@ -42,16 +42,16 @@ for filter_tag in filter_tags:
         when = datetime.strptime(downloaded['osm3s']['timestamp_osm_base'], '%Y-%d-%mT%H:%M:%SZ')
         # timenow = datetime.now()
         period_from_last_time = (timenow - when)
-        seconds_from_last_time = period_from_last_time.seconds
-        if seconds_from_last_time > tolerance_secs:
-            with open(reason_file_path, 'w') as f:
+        days_from_last_time = period_from_last_time.days
+        if days_from_last_time > tolerance_days:
+            with open(reason_file_path, 'a') as f:
                 f.write(f"downloading again {filter_tag}, already downloaded on {when}, but too old")
             print(f"downloading again {filter_tag}, already downloaded, but too old")
             should_it_be_downloaded = True
         else:
-            with open(reason_file_path, 'w') as f:
-                f.write(f"skipping {filter_tag}, already downloaded and quite recent")
-                f.write(f"period from last time {period_from_last_time}\nIn seconds: {seconds_from_last_time}")
+            with open(reason_file_path, 'a') as f:
+                f.write(f"skipping {filter_tag}, already downloaded and quite recent\n")
+                f.write(f"period from last time {period_from_last_time}\nIn days: {days_from_last_time}\n")
             print(f"skipping {filter_tag}, already downloaded and quite recent")
     if should_it_be_downloaded:
         cur_tags_poi = lib_over.download_data(osm_id_venezia, [filter_tag], what='all')
