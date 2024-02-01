@@ -26,8 +26,8 @@ filter_tags = ["'amenity'", "'building'", "'boundary'", "'craft'", "'emergency'"
 output_logs = os.path.join('files', 'poi', 'logs')
 os.makedirs(output_logs, exist_ok=True)
 timenow = datetime.now()
-info_path = os.path.join(output_logs, f'log_{timenow.strftime("%Y-%d-%m")}.json')
-reason_file_path = os.path.join(output_logs, f'log_{timenow.strftime("%Y-%d-%m")}.txt')
+info_path = os.path.join(output_logs, f'log_{timenow.strftime("%Y-%m-%d")}.json')
+reason_file_path = os.path.join(output_logs, f'log_{timenow.strftime("%Y-%m-%d")}.txt')
 for filter_tag in filter_tags:
     #pdb.set_trace()
     tag = filter_tag[1:-1]
@@ -39,13 +39,13 @@ for filter_tag in filter_tags:
         print('checking ', target_path)
         with open(target_path, 'r') as dpoi:
             downloaded = json.load(dpoi)
-        when = datetime.strptime(downloaded['osm3s']['timestamp_osm_base'], '%Y-%d-%mT%H:%M:%SZ')
+        when = datetime.strptime(downloaded['osm3s']['timestamp_osm_base'], '%Y-%m-%dT%H:%M:%SZ')
         # timenow = datetime.now()
         period_from_last_time = (timenow - when)
         days_from_last_time = period_from_last_time.days
         if days_from_last_time > tolerance_days:
             with open(reason_file_path, 'a') as f:
-                f.write(f"downloading again {filter_tag}, already downloaded on {when}, but too old")
+                f.write(f"downloading again {filter_tag}, already downloaded on {when}, but too old\n")
             print(f"downloading again {filter_tag}, already downloaded, but too old")
             should_it_be_downloaded = True
         else:
@@ -64,7 +64,7 @@ for filter_tag in filter_tags:
         last_download_date = when
 
 download_info = {
-    'last_download':last_download_date.strftime('%Y-%d-%mT%H:%M:%SZ'),
+    'last_download':last_download_date.strftime('%Y-%m-%dT%H:%M:%SZ'),
     'downloaded_tags': downloaded_tags,
     'downloaded_poi': total_poi,
     'all_tags': filter_tags
