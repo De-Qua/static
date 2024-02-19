@@ -12,7 +12,7 @@ output = os.path.join('files', 'poi')
 os.makedirs(output, exist_ok=True)
 
 # when to download again
-tolerance_days = 7 # 1 week
+tolerance_days = 0 # 1 week
 
 total_poi = 0
 downloaded_tags = []
@@ -20,8 +20,8 @@ downloaded_tags = []
 filter_tags = ["'amenity'", "'building'", "'boundary'", "'craft'", "'emergency'", "'healthcare'", \
                "'highway'", "'historic'", "'landuse'", "'leisure'", "'natural'", \
                "'office'", "'place'", "'power'", "'public_transport'", "'railway'", \
-               "'route'", "'shop'", "'tourism'", "'water'", "'waterway'", "'addr:housenumber'", \
-               "'addr:street'" ]
+               "'route'", "'shop'", "'tourism'", "'water'", "'waterway'" ] #, "'addr:housenumber'", \
+            #    "'addr:street'" ]
 
 output_logs = os.path.join('files', 'poi', 'logs')
 os.makedirs(output_logs, exist_ok=True)
@@ -35,11 +35,13 @@ for filter_tag in filter_tags:
     should_it_be_downloaded = False
     if not os.path.exists(target_path):
         should_it_be_downloaded = True
+        when_last_download = None
     else:
         print('checking ', target_path)
         with open(target_path, 'r') as dpoi:
             downloaded = json.load(dpoi)
-        when = datetime.strptime(downloaded['osm3s']['timestamp_osm_base'], '%Y-%m-%dT%H:%M:%SZ')
+        when_last_download = downloaded['osm3s']['timestamp_osm_base']
+        when = datetime.strptime(when_last_download, '%Y-%m-%dT%H:%M:%SZ')
         # timenow = datetime.now()
         period_from_last_time = (timenow - when)
         days_from_last_time = period_from_last_time.days
@@ -54,7 +56,7 @@ for filter_tag in filter_tags:
                 f.write(f"period from last time {period_from_last_time}\nIn days: {days_from_last_time}\n")
             print(f"skipping {filter_tag}, already downloaded and quite recent")
     if should_it_be_downloaded:
-        cur_tags_poi = lib_over.download_data(osm_id_venezia, [filter_tag], what='all')
+        cur_tags_poi = lib_over.download_data(osm_id_venezia, [filter_tag], what='all', newer_than=when_last_download)
         downloaded_tags.append(filter_tag)
         print(f"Found {len(cur_tags_poi['elements'])} {tag}")
         lib_over.save_data_as(cur_tags_poi, target_path)

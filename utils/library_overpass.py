@@ -2,9 +2,11 @@ import requests
 import json
 import numpy as np
 import matplotlib.pyplot as plt# Collect coords into list
+import datetime as dt
 
-def download_data(bbox, filters, what='nodes'):
-
+def download_data(bbox, filters, what='nodes', newer_than=None):
+    if not newer_than:
+        newer_than = dt.datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ")
     overpass_url = "http://overpass-api.de/api/interpreter"
     overpass_query = """
     [out:json];
@@ -22,21 +24,21 @@ def download_data(bbox, filters, what='nodes'):
     if what == 'nodes':
         for filter in filters:
             overpass_query += "\n"
-            overpass_query += "node[{filter}]({bbox});".format(filter=filter, bbox=bbox_query);
+            overpass_query += f'node[{filter}](newer:"{newer_than}")({bbox});'
     elif what == 'ways':
         for filter in filters:
             overpass_query += "\n"
-            overpass_query += "way[{filter}]({bbox});".format(filter=filter, bbox=bbox_query);
+            overpass_query += f'way[{filter}](newer:"{newer_than}")({bbox});'
     elif what == 'relations':
         for filter in filters:
             overpass_query += "\n"
-            overpass_query += "relation[{filter}]({bbox});".format(filter=filter, bbox=bbox_query);
+            overpass_query += f'relation[{filter}](newer:"{newer_than}")({bbox});'
     elif what == 'all':
         for filter in filters:
             overpass_query += "\n"
-            overpass_query += "node[{filter}]({bbox}); \
-            way[{filter}]({bbox}); \
-            relation[{filter}]({bbox});".format(filter=filter, bbox=bbox_query);
+            overpass_query += f'node[{filter}](newer:"{newer_than}")({bbox}); \
+            way[{filter}](newer:"{newer_than}")({bbox}); \
+            relation[{filter}](newer:"{newer_than}")({bbox});';
 
     overpass_query += """
     );
