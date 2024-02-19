@@ -16,9 +16,9 @@ def download_data(bbox, filters, what='nodes', newer_than=None):
         # convert list in string without [ ]
         bbox_query = str(bbox)[1:-1]
     elif type(bbox is int):
-        overpass_query += "relation   ({rel}) -> .c ; \
+        overpass_query += f"relation   ({bbox}) -> .c ; \
         .c map_to_area -> .myarea ; \
-        ( ".format(rel=bbox)
+        ( "
         # set the new object as bbox
         bbox_query = "area.myarea"
     if what == 'nodes':
@@ -38,7 +38,7 @@ def download_data(bbox, filters, what='nodes', newer_than=None):
             overpass_query += "\n"
             overpass_query += f'node[{filter}](newer:"{newer_than}")({bbox_query}); \
             way[{filter}](newer:"{newer_than}")({bbox_query}); \
-            relation[{filter}](newer:"{newer_than}")({bbox_query});';
+            relation[{filter}](newer:"{newer_than}")({bbox_query});'
 
     overpass_query += """
     );
