@@ -6,7 +6,7 @@ import datetime as dt
 
 def download_data(bbox, filters, what='nodes', newer_than=None):
     if not newer_than:
-        newer_than = dt.datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ")
+        newer_than = "1900-01-01T01:01:00Z"
     overpass_url = "http://overpass-api.de/api/interpreter"
     overpass_query = """
     [out:json];
@@ -24,21 +24,21 @@ def download_data(bbox, filters, what='nodes', newer_than=None):
     if what == 'nodes':
         for filter in filters:
             overpass_query += "\n"
-            overpass_query += f'node[{filter}](newer:"{newer_than}")({bbox});'
+            overpass_query += f'node[{filter}](newer:"{newer_than}")({bbox_query});'
     elif what == 'ways':
         for filter in filters:
             overpass_query += "\n"
-            overpass_query += f'way[{filter}](newer:"{newer_than}")({bbox});'
+            overpass_query += f'way[{filter}](newer:"{newer_than}")({bbox_query});'
     elif what == 'relations':
         for filter in filters:
             overpass_query += "\n"
-            overpass_query += f'relation[{filter}](newer:"{newer_than}")({bbox});'
+            overpass_query += f'relation[{filter}](newer:"{newer_than}")({bbox_query});'
     elif what == 'all':
         for filter in filters:
             overpass_query += "\n"
-            overpass_query += f'node[{filter}](newer:"{newer_than}")({bbox}); \
-            way[{filter}](newer:"{newer_than}")({bbox}); \
-            relation[{filter}](newer:"{newer_than}")({bbox});';
+            overpass_query += f'node[{filter}](newer:"{newer_than}")({bbox_query}); \
+            way[{filter}](newer:"{newer_than}")({bbox_query}); \
+            relation[{filter}](newer:"{newer_than}")({bbox_query});';
 
     overpass_query += """
     );
