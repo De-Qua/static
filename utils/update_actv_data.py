@@ -71,16 +71,23 @@ def get_updated_gtfs_files(logger, file_folder=None, file_format="*.zip", start_
     # check all the files that match with file format
     files = [f for f in glob.glob(os.path.join(file_folder, file_format))]
     updated_files = []
+    valid_from = None
+    valid_to = None
     for file in files:
         try:
             feed = gtfs_kit.read_feed(file, dist_units="km")
+            begin_date = pd.to_datetime(feed.calendar["start_date"]).min()
             last_date = pd.to_datetime(feed.calendar["end_date"]).max()
             if last_date < start_date:
                 os.remove(file)
                 logger.info(f"Removed GTFS file with last_date {last_date}: {file}")
             else:
+                if not valid_from or begin_date < valid_from:
+                    valid_from = begin_date
+                if not valid_to or valid_to < last_date:
+                    valid_to = last_date
                 updated_files.append(file)
                 logger.info(f"Use GTFS file with last_date {last_date}: {file}")
         except Exception as e:
             logger.warning(f"Reading GTFS file {file} exception: {e}")
-    return updated_files
+    return updated_files, valid_from, valid_to
