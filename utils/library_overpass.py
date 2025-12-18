@@ -3,6 +3,7 @@ import json
 import numpy as np
 import matplotlib.pyplot as plt# Collect coords into list
 import datetime as dt
+import csv 
 
 def download_data(bbox, filters, what='nodes', newer_than=None, 
                 timeout=30, overpass_url = "http://overpass-api.de/api/interpreter"):
@@ -86,7 +87,25 @@ def save_data_as(data, path, format='json'):
             json.dump(data, outfile)
 
 def export_to_csv(data, path):
-    breakpoint()
+
+    elements = data.get('elements', [])
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        # Header
+        writer.writerow([
+            "id", "type", "name", "category", "lat", "lon", "last_modified", "tags"
+        ])
+        for elem in elements:
+            elem_id = elem.get('id', '')
+            elem_type = elem.get('type', '')
+            name = elem.get('tags', {}).get('name', '')
+            category = elem.get('tags', {}).get('amenity', elem.get('tags', {}).get('shop', ''))
+            lat = elem.get('lat', elem.get('center', {}).get('lat', ''))
+            lon = elem.get('lon', elem.get('center', {}).get('lon', ''))
+            last_modified = elem.get('timestamp', '')  # Not always available
+            tags = str(elem.get('tags', {}))
+            writer.writerow([elem_id, elem_type, name, category, lat, lon, last_modified, tags])
+    print(f"Exported to {path}")
 
 def remove_headers_and_tolist(data):
 
