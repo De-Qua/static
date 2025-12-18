@@ -4,10 +4,11 @@ import numpy as np
 import matplotlib.pyplot as plt# Collect coords into list
 import datetime as dt
 
-def download_data(bbox, filters, what='nodes', newer_than=None):
+def download_data(bbox, filters, what='nodes', newer_than=None, 
+                timeout=30, overpass_url = "http://overpass-api.de/api/interpreter"):
     if not newer_than:
         newer_than = "1900-01-01T01:01:00Z"
-    overpass_url = "http://overpass-api.de/api/interpreter"
+    
     overpass_query = """
     [out:json];
     """
@@ -44,16 +45,48 @@ def download_data(bbox, filters, what='nodes', newer_than=None):
     );
     out center;
     """
-    print(overpass_query)
-    response = requests.get(overpass_url,params={'data': overpass_query})
-    data = response.json()
+    print(f"Overpass query:\n{overpass_query}\n")
+
+    # response = requests.get(overpass_url,params={'data': overpass_query})
+    # data = response.json()
+
+    # if we want to be polite
+    # and write down who we are
+    headers = {
+        'User-Agent': 'YourProjectName/1.0 (your@email.com)',
+        'Accept': 'application/json'
+    }
+
+    try:
+        response = requests.get(
+            overpass_url,
+            params={'data': overpass_query},
+            # headers=headers,
+            timeout=timeout
+        )
+        data = response.json()
+
+        # response.raise_for_status()
+        # return response.json() if output_format == "json" else response.text
+
+    except Exception as e:
+        print(f"Error during download of {filters[0]}: {e}")
+        return None
 
     return data
 
-def save_data_as(data, path):
+def save_data_as(data, path, format='json'):
 
-    with open(path, 'w') as outfile:
-        json.dump(data, outfile)
+    if format == 'csv':
+        if path.endswith('.json'):
+            path = path[:-4]+'csv'
+        export_to_csv(data, path)
+    else:
+        with open(path, 'w') as outfile:
+            json.dump(data, outfile)
+
+def export_to_csv(data, path):
+    breakpoint()
 
 def remove_headers_and_tolist(data):
 
