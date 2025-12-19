@@ -92,7 +92,7 @@ for filter_tag in filter_tags:
         last_download_date = time_last_download
 
     # wait a couple of seconds
-    time.sleep(2)
+    time.sleep(60)
 
 # dump some info in the .json file
 download_info = {
