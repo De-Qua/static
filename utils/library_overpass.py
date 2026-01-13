@@ -4,9 +4,11 @@ import numpy as np
 import matplotlib.pyplot as plt# Collect coords into list
 import datetime as dt
 import csv 
+import time 
 
 def download_data(bbox, filters, what='nodes', newer_than=None, 
-                timeout=30, overpass_url = "http://overpass-api.de/api/interpreter"):
+                timeout=30, overpass_url = "http://overpass-api.de/api/interpreter", 
+                num_retry=5, sleep_retry=60):
     if not newer_than:
         newer_than = "1900-01-01T01:01:00Z"
     
@@ -57,22 +59,31 @@ def download_data(bbox, filters, what='nodes', newer_than=None,
         'User-Agent': 'YourProjectName/1.0 (your@email.com)',
         'Accept': 'application/json'
     }
+    
+    data = None
+    finished = False
+    cur_retry = 0
+    
+    while not finished and cur_retry < num_retry:
 
-    try:
-        response = requests.get(
-            overpass_url,
-            params={'data': overpass_query},
-            # headers=headers,
-            timeout=timeout
-        )
-        data = response.json()
+        try:
+            response = requests.get(
+                overpass_url,
+                params={'data': overpass_query},
+                # headers=headers,
+                timeout=timeout
+            )
+            data = response.json()
 
-        # response.raise_for_status()
-        # return response.json() if output_format == "json" else response.text
+            # response.raise_for_status()
+            # return response.json() if output_format == "json" else response.text
+            finished = True
 
-    except Exception as e:
-        print(f"Error during download of {filters[0]}: {e}")
-        return None
+        except Exception as e:
+            print(f"Error during download of {filters[0]}: {e}")
+            print(f"Try again in {sleep_retry}s")
+            cur_retry += 1
+            time.sleep(sleep_retry)
 
     return data
 

@@ -25,7 +25,8 @@ os.makedirs(output_logs, exist_ok=True)
 csv_output_logs = os.path.join(output, 'csv')
 os.makedirs(csv_output_logs, exist_ok=True)
 
-
+# sleep time between two queries
+sleep_time = 5
 # count how it goes
 total_poi = 0
 # we count the "tag" we downloaded
@@ -60,7 +61,7 @@ for filter_tag in filter_tags:
         period_from_last_time = (timenow - time_last_download)
         days_from_last_time = period_from_last_time.days
         # check if it's too old
-        if days_from_last_time > tolerance_days:
+        if days_from_last_time >= tolerance_days:
             with open(reason_file_path, 'a') as f:
                 f.write(f"downloading again {filter_tag}, already downloaded on {time_last_download}, but too old\n")
             print(f"downloading again {filter_tag}, already downloaded, but too old")
@@ -92,7 +93,7 @@ for filter_tag in filter_tags:
         last_download_date = time_last_download
 
     # wait a couple of seconds
-    time.sleep(60)
+    time.sleep(sleep_time)
 
 # dump some info in the .json file
 download_info = {
