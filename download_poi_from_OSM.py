@@ -58,6 +58,8 @@ for filter_tag in filter_tags:
             downloaded = json.load(dpoi)
         when_last_download = downloaded['osm3s']['timestamp_osm_base']
         time_last_download = datetime.strptime(when_last_download, '%Y-%m-%dT%H:%M:%SZ')
+        when_last_download_with_buffer = time_last_download - timedelta(hours=6)
+        when_last_download_with_buffer = when_last_download_with_buffer.strftime('%Y-%m-%dT%H:%M:%SZ')
         period_from_last_time = (timenow - time_last_download)
         days_from_last_time = period_from_last_time.days
         # check if it's too old
@@ -76,7 +78,7 @@ for filter_tag in filter_tags:
     ###############################3
     # here download the new data
     if should_it_be_downloaded:
-        cur_tags_poi = lib_over.download_data(osm_id_venezia, [filter_tag], what='all', newer_than=when_last_download)
+        cur_tags_poi = lib_over.download_data(osm_id_venezia, [filter_tag], what='all', newer_than=when_last_download_with_buffer)
         
         if cur_tags_poi is not None:
             tags_downloaded_today.append(filter_tag)
