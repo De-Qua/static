@@ -1,4 +1,9 @@
-pyyaml
-bs4
-wget
-dequa_graph
+pyyaml==6.0.2
+beautifulsoup4==4.13.4
+sqlalchemy==1.4.3
+psycopg2-binary==2.9.3
+pytz==2024.2
+requests==2.32.3
+python-dotenv==0.16.0
+gtfs-kit==5.2.2
+dequa-graph @ git+https://github.com/De-Qua/dequa-graph.git

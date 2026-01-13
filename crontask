@@ -1,0 +1,5 @@
+# Run the first script every day at 3 AM
+*/5 * * * * appuser python /app/update_everything_db.py >> /proc/1/fd/1 2>&1
+
+# Run the second script every 2 minutes
+*/2 * * * * appuser python /app/update_high_tide_level_postgresql.py >> /proc/1/fd/1 2>&1

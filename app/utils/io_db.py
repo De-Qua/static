@@ -1,8 +1,29 @@
 from pathlib import Path
 import re
+import sqlalchemy as db
+from sqlalchemy.orm import Session
 
 import datetime
 import psycopg2
+
+def get_engine_metadata(DATABASE_URL):
+    engine = db.create_engine(DATABASE_URL)
+    meta_data = db.MetaData(bind=engine)
+    meta_data.reflect()
+    return engine, meta_data
+
+def get_table(tbl_name, meta_data, engine):
+    tbl = db.Table(tbl_name, meta_data, autoload_with=engine)
+    return tbl
+
+def insert_tide(tide, DATABASE_URL):
+    engine, meta_data = get_engine_metadata(DATABASE_URL)
+    tbl_tide = get_table('tide_new', meta_data, engine)
+    tbl_curr_data = get_table('current_data', meta_data, engine)
+    
+    with Session(engine) as session:
+        
+    
 
 def get_current_data(conn):
     """Retrieve current data info from the DB instead of YAML."""

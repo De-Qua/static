@@ -1,0 +1,18 @@
+name: dequa
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9.2
+  - pip=24.3.1
+  - graph-tool=2.37
+  - pyyaml=6.0
+  - beautifulsoup4=4.13.4
+  - pytz=2024.2
+  - requests=2.32.3
+  - python-dotenv=0.16.0
+  - sqlalchemy=1.4.3
+  - pip:
+    - gtfs-kit==5.2.2
+    - psycopg2-binary==2.9.3
+    - git+https://github.com/De-Qua/dequa-graph.git

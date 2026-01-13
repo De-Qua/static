@@ -82,8 +82,6 @@ def main(logger):
         gtfs_ver = gtfs_max_num
         need_rebuild = True
 
-    import pdb
-    pdb.set_trace()
     graph_street_path = GRAPHS_FOLDER / street_max_path.name
     
     if need_rebuild:
@@ -124,7 +122,7 @@ def main(logger):
 
 
 if __name__ == '__main__':
-    logger = get_logger(name="dequa_update", file="logs/automatic_tasks.log", level=logging.DEBUG)
+    logger = get_logger(name="dequa_update", file="/app/logs/automatic_tasks.log", level=logging.DEBUG)
     logger.info("#" * 50)
     logger.info("running the script")
     main(logger)
