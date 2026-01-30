@@ -13,8 +13,8 @@ services:
 
     volumes:
       - ./app:/app
-      - ./files:/app/files
-      - ./logs:/app/logs
+      - ./app/files:/app/files
+      - ./app/logs:/app/logs
 
     
     labels:

@@ -22,8 +22,8 @@ def insert_tide(tide, DATABASE_URL):
     tbl_curr_data = get_table('current_data', meta_data, engine)
     
     with Session(engine) as session:
-        
-    
+        pass
+
 
 def get_current_data(conn):
     """Retrieve current data info from the DB instead of YAML."""

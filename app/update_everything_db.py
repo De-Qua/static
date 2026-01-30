@@ -122,7 +122,7 @@ def main(logger):
 
 
 if __name__ == '__main__':
-    logger = get_logger(name="dequa_update", file="/app/logs/automatic_tasks.log", level=logging.DEBUG)
+    logger = get_logger(name="dequa_update", file="logs/automatic_tasks.log", level=logging.DEBUG)
     logger.info("#" * 50)
     logger.info("running the script")
     main(logger)
