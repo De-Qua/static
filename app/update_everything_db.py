@@ -34,6 +34,7 @@ def main(logger):
     conn = psycopg2.connect(**DB_CONFIG)
 
     current = get_current_data(conn)
+    logger.info(f"Initial current versions: {current}")
 
     # create folders to avoid problems
     for f in [GRAPHS_FOLDER, GTFS_FOLDER]:
@@ -44,9 +45,11 @@ def main(logger):
     water_max_ver, water_max_path = find_highest_version_in_folder(GRAPHS_FOLDER, GRAPH_WATER_PATTERN)
     gtfs_max_num, gtfs_max_path = find_highest_version_in_folder(GTFS_FOLDER, GTFS_FILE_PATTERN)
 
+    logger.info(f"File versions: street {street_max_ver}, water {water_max_ver}, gtfs {gtfs_max_num}")
+    
     # check online gtfs file and eventually update
     last_gtfs_num, last_gtfs_data_name = get_last_actv_index()
-    if last_gtfs_num > gtfs_max_num:
+    if last_gtfs_num > (gtfs_max_num or 0):
         logger.info(f"New ACTV file: {last_gtfs_data_name}")
         download_actv_data(last_gtfs_data_name, GTFS_FOLDER)
         gtfs_max_num, gtfs_max_path = find_highest_version_in_folder(GTFS_FOLDER, GTFS_FILE_PATTERN)
@@ -59,9 +62,10 @@ def main(logger):
         wb_name = water_max_path.name
         wb_bytes = water_max_path.read_bytes()
         new_water_id = insert_graph(conn, 'water', wb_name, wb_bytes, water_max_ver)
-        update_current_data_ids(conn, current["id"], water_id=new_water_id, updated_at=datetime.datetime.now())
+        new_current_data_id = update_current_data_ids(conn, current["id"], water_id=new_water_id, updated_at=datetime.datetime.now())
         logger.info(f"Inserted graph_water id={new_water_id}, updated current_data.water_graph_id")
         # Update local in-memory current state
+        current["id"] = new_current_data_id
         current["graph_water_version"] = water_max_ver
         current["water_graph_id"] = new_water_id
         new_water_uploaded = True
@@ -116,7 +120,7 @@ def main(logger):
         logger.info("Database updated successfully")
 
     else:
-        logger.info("No update")
+        logger.info(f"No update.")
 
     conn.close()
 

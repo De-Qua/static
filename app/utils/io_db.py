@@ -40,9 +40,9 @@ def get_current_data(conn):
                    gs.version AS graph_street_version,
                    gw.version AS graph_water_version
             FROM current_data c
-            JOIN graph_street gs ON gs.id = c.street_graph_id
-            JOIN graph_water gw ON gw.id = c.water_graph_id
-            JOIN graph_waterbus gws ON gws.id = c.waterbus_graph_id
+            LEFT JOIN graph_street gs ON gs.id = c.street_graph_id
+            LEFT JOIN graph_water gw ON gw.id = c.water_graph_id
+            LEFT JOIN graph_waterbus gws ON gws.id = c.waterbus_graph_id
             LIMIT 1;
         """)
         row = cur.fetchone()

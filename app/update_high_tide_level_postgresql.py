@@ -9,6 +9,8 @@ import sqlalchemy as db
 from sqlalchemy.orm import Session
 import pytz
 from dotenv import load_dotenv
+from utils.logger import get_logger
+
 
 # Load environment variables from .env
 load_dotenv()
@@ -35,9 +37,7 @@ DT_TIDE_FORMAT = "%Y-%m-%d %H:%M:%S %z"
 MAX_NUM_ROWS = 1 * 24 * 12  # num_days * 24 [hours in a day] * 12 [tide data in one hour]
 MAX_ATTEMPTS = 3
 INTER_ATTEMPT_TIME = 30 # seconds
-# Set the logger
-logger = logging.getLogger('high tide')
-logger.setLevel(logging.DEBUG)
+
 
 
 def get_tide_data():
@@ -79,17 +79,20 @@ def format_tide_data(data):
     }
 
 
-def main():
+def main(logger):
     counter_attempts = 0
-    while counter_attempts < MAX_ATTEMPTS:
+    finished = False
+    while counter_attempts < MAX_ATTEMPTS and not finished:
         # update the counter and sleep (except in the first case)
-        counter_attempts += 1
         if counter_attempts > 0:
             time.sleep(INTER_ATTEMPT_TIME)
+        counter_attempts += 1
 
         tide = get_tide_data()
-        if not tide:
-            continue
+        if tide:
+            finished = True
+
+    if finished:
         tide["uploaded_at"] = dt.datetime.utcnow().replace(tzinfo=None)
         # Set database
         engine = db.create_engine(DATABASE_URL)
@@ -99,7 +102,7 @@ def main():
         # get the table "tide" and "current data"
         tbl_tide = db.Table('tide_new', meta_data, autoload_with=engine)
         tbl_curr_data = db.Table('current_data', meta_data, autoload_with=engine)
-         
+            
         # insert in the table
         new_tide = tbl_tide.insert(tide)
 
@@ -108,7 +111,7 @@ def main():
             num_rows = session.query(tbl_tide).count()
             last_row = session.query(tbl_tide).order_by(tbl_tide.c.id.desc()).first()
             if num_rows > 0 and last_row.updated_at == tide["updated_at"]:
-                continue
+                logger.info("Tide is already up to date")
             else:
                 if num_rows >= 100:
                     to_be_deleted = tbl_tide.delete().where(tbl_tide.c.id < last_row.id - MAX_NUM_ROWS)
@@ -129,6 +132,13 @@ def main():
 
                 # Commit everythin
                 session.commit()
+                logger.info("Tide updated")
+    else:
+        logger.warning("I was not able to download the tide")
 
 if __name__ == "__main__":
-    main()
+    logger = get_logger(name="high_tide", file="logs/automatic_tasks_high_tide.log", level=logging.DEBUG)
+    # Set the logger
+    logger.info("#" * 50)
+    logger.info("running the script")
+    main(logger)
