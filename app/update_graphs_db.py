@@ -2,7 +2,7 @@ import psycopg2
 import datetime
 import logging
 from pathlib import Path
-from dotenv import load_dotenv, dotenv_values
+from dotenv import dotenv_values
 import os
 import re
 from sqlalchemy.orm import Session

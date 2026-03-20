@@ -6,8 +6,8 @@ services:
     container_name: dq_static
 
     # Environment variables for database connection, etc.
-    env_file:
-      - .env
+    # env_file:
+    #   - .env
 
     volumes:
       - ./app:/app

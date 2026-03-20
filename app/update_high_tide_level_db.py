@@ -8,12 +8,12 @@ import logging
 import sqlalchemy as db
 from sqlalchemy.orm import Session
 import pytz
-from dotenv import load_dotenv
+from dotenv import dotenv_values
 from utils.logger import get_logger
 
 
 # Load environment variables from .env
-config = load_dotenv()
+config = dotenv_values()
 
 DB_CONFIG = {
     "engine": config.get("DB_ENGINE", "postgresql"),
