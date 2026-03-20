@@ -5,26 +5,22 @@ services:
       dockerfile: Dockerfile
     container_name: dq_static
 
-    restart: unless-stopped
-
     # Environment variables for database connection, etc.
     env_file:
       - .env
 
     volumes:
       - ./app:/app
-      - ./app/files:/app/files
-      - ./app/logs:/app/logs
 
     
-    labels:
-      ofelia.enabled: "true"
-      # high tide every 2 minutes
-      ofelia.job-exec.high-tide-job.schedule: "@every 2m"
-      ofelia.job-exec.high-tide-job.command: "python /app/update_high_tide_level_postgresql.py"
-      # static every day at 3 am 
-      ofelia.job-exec.static.schedule: "0 0 3 * * *" 
-      ofelia.job-exec.static.command: "python /app/update_high_tide_level_postgresql.py"
+    # labels:
+    #   ofelia.enabled: "true"
+    #   # high tide every 2 minutes
+    #   ofelia.job-exec.high-tide-job.schedule: "@every 2m"
+    #   ofelia.job-exec.high-tide-job.command: "python /app/update_high_tide_level_postgresql.py"
+    #   # static every day at 3 am 
+    #   ofelia.job-exec.static.schedule: "0 0 3 * * *" 
+    #   ofelia.job-exec.static.command: "python /app/update_high_tide_level_postgresql.py"
 
   # ofelia:
   #   image: mcuadros/ofelia:latest

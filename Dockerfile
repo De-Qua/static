@@ -23,12 +23,12 @@ COPY environment.yml .
 
 RUN conda env create -n env -f environment.yml
 RUN echo "source activate env" > ~/.bashrc
-ENV PATH /opt/conda/envs/env/bin:$PATH
+ENV PATH=/opt/conda/envs/env/bin:$PATH
 
 # # Switch to non-root user
 # USER appuser
 
-CMD tail -f /dev/null
+CMD ["tail","-f","/dev/null"]
 
 # ENV PATH="/root/miniconda3/bin:${PATH}"
 # ARG PATH="/root/miniconda3/bin:${PATH}"

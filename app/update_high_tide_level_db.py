@@ -16,12 +16,12 @@ from utils.logger import get_logger
 config = load_dotenv()
 
 DB_CONFIG = {
-    "engine": config.get("ENGINE", "postgresql"),
-    "dbname": config.get("POSTGRES_DB", "dequa_data_versions"),
-    "user": config.get("POSTGRES_USER", "dequa"),
-    "password": config.get("POSTGRES_PASSWORD", "dequa"),
-    "host": config.get("POSTGRES_HOST", "localhost"),
-    "port": int(config.get("POSTGRES_PORT", 5432)),
+    "engine": config.get("DB_ENGINE", "postgresql"),
+    "dbname": config.get("DB_NAME", "dequa_data_versions"),
+    "user": config.get("DB_USER", "dequa"),
+    "password": config.get("DB_PASSWORD", "dequa"),
+    "host": config.get("DB_HOST", "localhost"),
+    "port": int(config.get("DB_PORT", 5432)),
 }
 
 DB_SERVER = f"{DB_CONFIG['host']}"
