@@ -13,15 +13,15 @@ from utils.logger import get_logger
 
 
 # Load environment variables from .env
-load_dotenv()
+config = load_dotenv()
 
 DB_CONFIG = {
-    "engine": os.getenv("ENGINE", "postgresql"),
-    "dbname": os.getenv("POSTGRES_DB", "dequa_data_versions"),
-    "user": os.getenv("POSTGRES_USER", "dequa"),
-    "password": os.getenv("POSTGRES_PASSWORD", "dequa"),
-    "host": os.getenv("POSTGRES_HOST", "localhost"),
-    "port": int(os.getenv("POSTGRES_PORT", 5432)),
+    "engine": config.get("ENGINE", "postgresql"),
+    "dbname": config.get("POSTGRES_DB", "dequa_data_versions"),
+    "user": config.get("POSTGRES_USER", "dequa"),
+    "password": config.get("POSTGRES_PASSWORD", "dequa"),
+    "host": config.get("POSTGRES_HOST", "localhost"),
+    "port": int(config.get("POSTGRES_PORT", 5432)),
 }
 
 DB_SERVER = f"{DB_CONFIG['host']}"

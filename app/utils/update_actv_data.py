@@ -1,8 +1,6 @@
 import requests
 from datetime import date
-import os
 import pandas as pd
-import glob
 from bs4 import BeautifulSoup
 import yaml
 import gtfs_kit
@@ -14,7 +12,7 @@ GTFS_URL = 'https://actv.avmspa.it/sites/default/files/attachments/opendata/navi
 
 def update_actv_data(logger=None, file_folder=None):
     if file_folder is None:
-        file_folder = os.path.join(os.getcwd(), "files", "gtfs")
+        file_folder = Path.cwd() / "files" / "gtfs"
     # get the page
     page = requests.get(GTFS_URL)
     soup = BeautifulSoup(page.text, 'html.parser')
@@ -32,7 +30,7 @@ def update_actv_data(logger=None, file_folder=None):
         variables = yaml.load(f, Loader=yaml.FullLoader)
     last_file_downloaded = variables['gtfs_last_number']
     if num > last_file_downloaded:
-        full_file_name = os.path.join(file_folder, last_file_name)
+        full_file_name = file_folder / last_file_name
         urllib.request.urlretrieve(f"{GTFS_URL}{last_file_name}", full_file_name)
         logger.info(f"updated actv, last number {num}")
         return num
@@ -65,11 +63,11 @@ def download_actv_data(file_name, save_folder):
 
 def get_updated_gtfs_files(logger, file_folder=None, file_format="*.zip", start_date=None):
     if file_folder is None:
-        file_folder = os.path.join(os.getcwd(), "files", "gtfs")
+        file_folder = Path.cwd() / "files" / "gtfs"
     if start_date is None:
         start_date = date.today()
     # check all the files that match with file format
-    files = [f for f in glob.glob(os.path.join(file_folder, file_format))]
+    files = [f for f in file_folder.glob(file_format)]
     updated_files = []
     valid_from = None
     valid_to = None
@@ -79,7 +77,8 @@ def get_updated_gtfs_files(logger, file_folder=None, file_format="*.zip", start_
             begin_date = pd.to_datetime(feed.calendar["start_date"]).min()
             last_date = pd.to_datetime(feed.calendar["end_date"]).max()
             if last_date < start_date:
-                os.remove(file)
+                # delete the file
+                file.unlink()
                 logger.info(f"Removed GTFS file with last_date {last_date}: {file}")
             else:
                 if not valid_from or begin_date < valid_from:
