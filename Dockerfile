@@ -1,4 +1,4 @@
-FROM continuumio/miniconda3:latest
+FROM condaforge/miniforge3:latest
 
 # Install system dependencies for cron and Shapely
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -28,7 +28,7 @@ ENV PATH=/opt/conda/envs/env/bin:$PATH
 # # Switch to non-root user
 # USER appuser
 
-CMD ["tail","-f","/dev/null"]
+# CMD ["tail","-f","/dev/null"]
 
 # ENV PATH="/root/miniconda3/bin:${PATH}"
 # ARG PATH="/root/miniconda3/bin:${PATH}"
