@@ -6,9 +6,10 @@ import yaml
 import gtfs_kit
 import urllib
 from pathlib import Path
+import re
 
 GTFS_URL = 'https://actv.avmspa.it/sites/default/files/attachments/opendata/navigazione/'
-
+ACTV_NAV_PATTERN = re.compile(r'^actv_nav_(\d+)\.zip$')
 
 def update_actv_data(logger=None, file_folder=None):
     if file_folder is None:
@@ -45,13 +46,27 @@ def get_last_actv_index():
     soup = BeautifulSoup(page.text, 'html.parser')
     # get all links/files
     links = soup.find_all('a')
-    # last one
-    link = links[-1]
-    # name of the zip file
-    last_file_name = link.get('href')
-    # number
-    num_string = last_file_name.split('_')[-1][:-4]
-    num = int(num_string)
+    # check only links that match the regexp
+    candidates = []
+    for link in links:
+        href = link.get('href')
+        if not href:
+            continue
+        # in caso l'href sia un path completo/relativo, prendi solo il nome file
+        filename = href.rsplit('/', 1)[-1]
+        match = ACTV_NAV_PATTERN.match(filename)
+        if match:
+            candidates.append((int(match.group(1)), filename))
+    
+    # take the greatest
+    num, last_file_name = max(candidates, key=lambda c: c[0])
+    # # last one
+    # link = links[-1]
+    # # name of the zip file
+    # last_file_name = link.get('href')
+    # # number
+    # num_string = last_file_name.split('_')[-1][:-4]
+    # num = int(num_string)
     return num, last_file_name
 
 
