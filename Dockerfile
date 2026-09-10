@@ -21,7 +21,7 @@ WORKDIR /app
 
 COPY environment.yml .
 
-RUN conda env create -n env -f environment.yml && \
+RUN mamba env create -n env -f environment.yml && \
     conda clean -afy && \
     find /opt/conda/envs/env -name "*.pyc" -delete && \
     find /opt/conda/envs/env -name "__pycache__" -type d -exec rm -rf {} + 2>/dev/null; true
