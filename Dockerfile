@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     libgeos-dev \
     libpq-dev \
-    gcc \
+    build-essential \
     wget \
     ca-certificates \
     libgtk-3-0 \
@@ -21,7 +21,11 @@ WORKDIR /app
 
 COPY environment.yml .
 
-RUN conda env create -n env -f environment.yml
+RUN conda env create -n env -f environment.yml && \
+    conda clean -afy && \
+    find /opt/conda/envs/env -name "*.pyc" -delete && \
+    find /opt/conda/envs/env -name "__pycache__" -type d -exec rm -rf {} + 2>/dev/null; true
+
 RUN echo "source activate env" > ~/.bashrc
 ENV PATH=/opt/conda/envs/env/bin:$PATH
 
