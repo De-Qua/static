@@ -1,5 +1,5 @@
 services:
-  updater:
+  dq_static:
     build:
       context: .
       dockerfile: Dockerfile

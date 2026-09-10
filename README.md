@@ -11,15 +11,15 @@ Le configurazioni (principalmente per quanto riguarda il database) sono su un fi
 Per lanciarlo come docker i comandi sono:
 ```bash
 # Update graphs
-docker compose run --rm updater python /app/update_graphs_db.py
+docker compose run --rm dq_static python /app/update_graphs_db.py
 # Update high tide
-docker compose run --rm updater python /app/update_high_tide_level_db.py
+docker compose run --rm dq_static python /app/update_high_tide_level_db.py
 ```
 
 Il sistema è pensato per essere lanciato periodicamente. Il modo più semplice è creare un cronjon sul server (ovviamente da aggiustare il path con il path di questa cartella):
 
 ```bash
 # crontab -e sull'host
-0 2 * * * cd /path/to/docker-compose && docker compose run --rm updater python /app/update_graphs_db.py
-2-59/5 * * * * cd /path/to/docker-compose && docker compose run --rm updater python /app/update_graphs_db.py
+0 2 * * * cd /path/to/docker-compose && docker compose run --rm dq_static python /app/update_graphs_db.py
+2-59/5 * * * * cd /path/to/docker-compose && docker compose run --rm dq_static python /app/update_graphs_db.py
 ```
