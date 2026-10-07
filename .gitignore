@@ -137,3 +137,5 @@ files_names.yaml
 *.zip
 files/
 logs/
+graphs/*
+gtfs/*

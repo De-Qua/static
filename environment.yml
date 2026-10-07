@@ -12,6 +12,7 @@ dependencies:
   - requests=2.32.3
   - python-dotenv=0.16.0
   - sqlalchemy=1.4.3
+  - colorlog=5.0.1
   - pip:
     - gtfs-kit==5.2.2
     - psycopg2-binary==2.9.3

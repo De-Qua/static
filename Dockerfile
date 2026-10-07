@@ -1,4 +1,4 @@
-FROM condaforge/miniforge3:latest
+FROM condaforge/miniforge3:26.7.2-0
 
 # Install system dependencies for cron and Shapely
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -9,7 +9,16 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \
     ca-certificates \
     libgtk-3-0 \
+    tzdata \
     && rm -rf /var/lib/apt/lists/*
+
+# Install supercronic (cron for containers: job output goes to the container logs)
+ARG SUPERCRONIC_VERSION=v0.2.49
+ARG SUPERCRONIC_SHA256=a53ae236602c7338aba3fbaff40bda6300eae3b9fedb8261eb06cfe3724430c1
+RUN wget -q -O /usr/local/bin/supercronic \
+    https://github.com/aptible/supercronic/releases/download/${SUPERCRONIC_VERSION}/supercronic-linux-amd64 \
+    && echo "${SUPERCRONIC_SHA256}  /usr/local/bin/supercronic" | sha256sum -c - \
+    && chmod +x /usr/local/bin/supercronic
 
 
 # Set working directory
@@ -28,11 +37,13 @@ RUN mamba env create -n env -f environment.yml && \
 
 RUN echo "source activate env" > ~/.bashrc
 ENV PATH=/opt/conda/envs/env/bin:$PATH
+ENV PYTHONUNBUFFERED=1
 
 # # Switch to non-root user
 # USER appuser
 
-# CMD ["tail","-f","/dev/null"]
+# Run the scheduled jobs defined in app/crontab (reloaded automatically when the file changes)
+CMD ["supercronic", "-inotify", "/app/crontab"]
 
 # ENV PATH="/root/miniconda3/bin:${PATH}"
 # ARG PATH="/root/miniconda3/bin:${PATH}"

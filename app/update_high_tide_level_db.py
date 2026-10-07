@@ -137,7 +137,7 @@ def main(logger):
         logger.warning("I was not able to download the tide")
 
 if __name__ == "__main__":
-    logger = get_logger(name="high_tide", file="logs/automatic_tasks_high_tide.log", level=logging.DEBUG)
+    logger = get_logger(name="high_tide", level=logging.DEBUG)
     # Set the logger
     logger.info("#" * 50)
     logger.info("running the script")

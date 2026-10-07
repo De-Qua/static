@@ -1,0 +1,4 @@
+# Scheduled jobs run by supercronic inside the dq_static container (timezone: TZ in docker-compose.yml)
+# m     h   dom mon dow   command
+0       2   *   *   *     python /app/update_graphs_db.py
+2-59/5  *   *   *   *     python /app/update_high_tide_level_db.py
