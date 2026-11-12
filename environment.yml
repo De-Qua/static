@@ -15,5 +15,6 @@ dependencies:
   - colorlog=5.0.1
   - pip:
     - gtfs-kit==5.2.2
+    - geoalchemy2==0.9.2
     - psycopg2-binary==2.9.3
     - git+https://github.com/De-Qua/dequa-graph.git
