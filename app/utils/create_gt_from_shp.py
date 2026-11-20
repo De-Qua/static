@@ -277,12 +277,14 @@ def create_water_graph(gpd_water):
                                         orario_senso_start,orario_senso_end, orario_chiuso_start, orario_chiuso_end,
                                         gpd_water["motoondoso"], 
                                         gpd_water["PROF_min"], gpd_water["PROF_max"], gpd_water["PROF_mean"], gpd_water["PROF_media"],
+                                        gpd_water["CAN_PRINC"], gpd_water["VEL_SOS"], 
                                         gpd_water["TC_DENOM"],gpd_water["geometry"]),
     columns = ["length","vel_max", "vel_max_mp", "solo_remi", 
                "larghezza", "altezza", "senso_unic", 
                "h_su_start","h_su_end", "dt_start", "dt_end", 
                "motoondoso",
                "prof_min", "prof_max", "prof_mean", "prof_median",
+               "can_princ", "vel_sos",
                "nome","geometry"])
 
     today = datetime.datetime.today().strftime ('%d%m')
@@ -331,6 +333,9 @@ def retrieve_attribute_type(attribute):
         'prof_max': 'float',
         'prof_mean': 'float',
         'prof_median': 'float',
+        # canali principali e velocità emergenze
+        'can_princ': 'boolean',
+        'vel_sos': 'float'
     }
     if attribute in dequa_types.keys():
         return dequa_types[attribute]
