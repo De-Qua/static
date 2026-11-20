@@ -1,7 +1,12 @@
+import sys
+
+from pathlib import Path
+
 import datetime
 import csv
 
 import numpy as np
+import pandas as pd
 import geopandas as gpd
 from geopy.distance import distance
 
@@ -79,12 +84,9 @@ def pairs(lst):
         prev = item
 
 
-def create_land_graph(shp_path):
-    print("reading the file..")
-    streets = gpd.read_file(shp_path)
-
+def create_land_graph(gpd_streets):
     print("adapting to our needs..")
-    lunghezza = lines_length(streets['geometry'])
+    lunghezza = lines_length(gpd_streets['geometry'])
 
     list_of_Codice_Pon_flat = ["MELONI"]
     # L'elenco di questi ponti è preso da https://www.comune.venezia.it/it/content/venezia-accessibile-itinerari-senza-barriere
@@ -97,7 +99,7 @@ def create_land_graph(shp_path):
 
     ponte = []
     accessible = []
-    for bridge in streets["Codice_Pon"]:
+    for bridge in gpd_streets["Codice_Pon"]:
         if bridge:
             if bridge in list_of_Codice_Pon_flat:
                 ponte.append(0)
@@ -131,9 +133,9 @@ def create_land_graph(shp_path):
     # crea nuovo dataframe con solo colonne interessanti
     # pdb.set_trace()
     total = gpd.GeoDataFrame(data=zip(lunghezza, ponte, accessible,
-                                      streets["geometry"], streets['V4W_ID'], streets['VEL_MAX'],
-                                      streets['max_tide'], streets['min_tide'], streets['avg_tide'], streets['med_tide'],
-                                      streets['Pass_cmZPS'], streets['Pass_altez']),
+                                      gpd_streets["geometry"], gpd_streets['V4W_ID'], gpd_streets['VEL_MAX'],
+                                      gpd_streets['max_tide'], gpd_streets['min_tide'], gpd_streets['avg_tide'], gpd_streets['med_tide'],
+                                      gpd_streets['Pass_cmZPS'], gpd_streets['Pass_altez']),
                              columns=["length", "ponte", "accessible",
                                       "geometry", "street_id",
                                       "vel_max", "max_tide", "min_tide", "avg_tide", "med_tide",
@@ -147,8 +149,9 @@ def create_land_graph(shp_path):
     return total, new_shp_name
 
 
-def create_water_graph(shp_path):
-    zucchetta_path = "Final Ponti Data CSV.csv"
+def create_water_graph(gpd_water):
+    script_dir = Path(__file__).resolve().parent
+    zucchetta_path = script_dir / "Final Ponti Data CSV.csv"
     ponti = []
 
     print("\n\n\n\n\n*****\nWARNING\nCONTROLLA I PONTI! DA ZUCCHETTA A COMUNE\n*****\n\n\n\n\n")
@@ -162,22 +165,20 @@ def create_water_graph(shp_path):
                 col_num = col_num_as_list[0]
             elif row[0]:
                 ponti.append({'altezza':row[col_num], 'bridge_num_zucchetta':row[0], 'nome':row[1]})
-    print("reading the file..")
-    shp_gpd = gpd.read_file(shp_path)
 
     print("adapting to our needs..")
-    lunghezza = lines_length(shp_gpd['geometry'])
-    solo_remi=[1 if i=='Rio Blu' else 0 for i in shp_gpd['BARCHE_A_R']]
+    lunghezza = lines_length(gpd_water['geometry'])
+    solo_remi=[1 if i=='Rio Blu' or i=='Secca' else 0 for i in gpd_water['BARCHE_A_R']]
     # normativa: to be done
     # c'è anche la stazza, ma per il momento non ci interessa (10t)
-    vel_max=shp_gpd['VEL_MAX'][:]
-    vel_max_mp=shp_gpd['VEL_MAX_MP'][:]
-    larghezza=shp_gpd['LARGHEZZA_']
-    senso_unico=shp_gpd['ONEWAY'][:]
-    orario_senso_start=gpd.GeoSeries(np.zeros([larghezza.size], dtype=np.int8))
-    orario_senso_end=gpd.GeoSeries(np.ones([larghezza.size], dtype=np.int8)*24)
-    orario_chiuso_start=gpd.GeoSeries(np.ones([larghezza.size], dtype=np.int8)*24)
-    orario_chiuso_end=gpd.GeoSeries(np.ones([larghezza.size], dtype=np.int8)*24)
+    vel_max=gpd_water['VEL_MAX'][:]
+    vel_max_mp=gpd_water['VEL_MAX_MP'][:]
+    larghezza=gpd_water['LARGH_MAX']
+    senso_unico=gpd_water['ONEWAY'][:]
+    orario_senso_start=pd.Series(np.zeros([larghezza.size], dtype=np.int8))
+    orario_senso_end=pd.Series(np.ones([larghezza.size], dtype=np.int8)*24)
+    orario_chiuso_start=pd.Series(np.ones([larghezza.size], dtype=np.int8)*24)
+    orario_chiuso_end=pd.Series(np.ones([larghezza.size], dtype=np.int8)*24)
     altezza=np.double(np.ones_like(solo_remi))*1000
 
     lista_sensi_inversi=["DE SAN LUCA - ROSSINI", "DE PALAZZO - CANONICA", "DE LA FAVA","DE LA PIETA'  - SANT'ANTONIN","DE SAN GIUSEPPE", "DE LA TETA - SAN GIOVANNI LATERANO RAMO BASSO", "DE SAN GIACOMO DALL'ORIO","DE SAN VIO"]
@@ -193,7 +194,7 @@ def create_water_graph(shp_path):
     vel_centro=5
     ponte_codes_list=[]
     epsilon=0.001
-    for index,canal in shp_gpd.iterrows():
+    for index,canal in gpd_water.iterrows():
 
         print(canal['TC_DENOM'])
         if canal['DIVIETO_TR']:
@@ -271,8 +272,18 @@ def create_water_graph(shp_path):
     assert(len(ponti)==len(ponte_codes_list),'diversi ponti tra shp e csv')
 
     #da aggiungere a total: h_closed_start, h_closed_end
-    total = gpd.GeoDataFrame(data = zip(lunghezza, vel_max, vel_max_mp, solo_remi, larghezza, altezza, senso_unico, orario_senso_start,orario_senso_end, orario_chiuso_start, orario_chiuso_end, shp_gpd["TC_DENOM"],shp_gpd["geometry"]),
-    columns = ["length","vel_max", "vel_max_mp", "solo_remi", "larghezza", "altezza", "senso_unico", "h_su_start","h_su_end", "dt_start", "dt_end", "nome","geometry"])
+    total = gpd.GeoDataFrame(data = zip(lunghezza, vel_max, vel_max_mp, solo_remi, 
+                                        larghezza, altezza, senso_unico, 
+                                        orario_senso_start,orario_senso_end, orario_chiuso_start, orario_chiuso_end,
+                                        gpd_water["motoondoso"], 
+                                        gpd_water["PROF_min"], gpd_water["PROF_max"], gpd_water["PROF_mean"], gpd_water["PROF_media"],
+                                        gpd_water["TC_DENOM"],gpd_water["geometry"]),
+    columns = ["length","vel_max", "vel_max_mp", "solo_remi", 
+               "larghezza", "altezza", "senso_unic", 
+               "h_su_start","h_su_end", "dt_start", "dt_end", 
+               "motoondoso",
+               "prof_min", "prof_max", "prof_mean", "prof_median",
+               "nome","geometry"])
 
     today = datetime.datetime.today().strftime ('%d%m')
     new_shp_name = f"{shp_path[:-4]}_{today}.shp"
@@ -319,11 +330,12 @@ def retrieve_attribute_type(attribute):
         'prof_min': 'float',
         'prof_max': 'float',
         'prof_mean': 'float',
+        'prof_median': 'float',
     }
     if attribute in dequa_types.keys():
         return dequa_types[attribute]
     else:
-        return "No type detected"
+        return f"No type detected: {attribute}"
     
 
 def get_vertices_from_geometry(g, geometry):
@@ -351,19 +363,9 @@ def add_properties_to_edge(g, edge, properties):
         g.ep[property][edge] = properties[property]
     return
 
-def geodf2gt(geodf):
+def geodf2gt(geodf, water_graph):
     print("Reading the file...")
     df = geodf
-
-    if 'solo_remi' in df.columns:
-        water_graph = True
-        print("It is a water graph")
-    else:
-        water_graph = False
-        print("It is a street graph")
-
-    print("The file has {} edges.".format(len(df)))
-    print("Each edge has these attributes: {}".format([col for col in df.columns]))
 
     print("Creating the graph...")
     g = Graph(directed=False)
@@ -422,3 +424,61 @@ def geodf2gt(geodf):
     print("================")
 
     return g
+
+def load_shp(shp_path):
+    print("Reading the file...")
+    df = gpd.read_file(shp_path)
+    if 'BARCHE_A_R' in df.columns:
+        water_graph = True
+        print("It is a water graph")
+    else:
+        water_graph = False
+        print("It is a street graph")
+
+    print("The file has {} edges.".format(len(df)))
+    print("Each edge has these attributes: {}".format([col for col in df.columns]))
+
+    return df, water_graph
+    
+    
+if __name__ == "__main__":
+
+    print("\n******************************************")
+    print(" ### SHP2GT ###")
+    print("Let's convert a file shp to a graph in the graph-tool format!")
+    print("******************************************\n")
+
+    out_path = []
+    if len(sys.argv) > 2:
+        print("great, path is given as {}".format(sys.argv[1]))
+        print("Also the output path is given as {}".format(sys.argv[2]))
+        shp_path = sys.argv[1]
+        out_path = sys.argv[2]
+    elif len(sys.argv) > 1:
+        print("great, path is given as {}".format(sys.argv[1]))
+        #shp_path = os.path.join(sys.argv[1], shp_relative_path)
+        shp_path = sys.argv[1]
+        out_path = Path(shp_path).parent
+
+    else:
+        print("You must give a shp file in order to convert it to have graph!")
+
+    if Path(out_path).is_dir():
+        today = datetime.datetime.today().strftime ('%d%m')
+        shp_file = Path(shp_path)
+        out_name = shp_file.with_suffix('').name
+        out_name = f"{out_name}_{today}.gt"
+        out_path = Path(out_path) / out_name
+
+    df, is_water_graph = load_shp(shp_path)
+    
+    if is_water_graph:
+        df_dequa, gt_name = create_water_graph(df)
+    else:
+        df_dequa, gt_name = create_land_graph(df)
+    
+    graph = geodf2gt(df_dequa, is_water_graph)
+    
+    graph.save(str(out_path))
+    
+    print(f"New graph saved: {out_path}")
